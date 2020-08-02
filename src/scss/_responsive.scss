@@ -1,0 +1,222 @@
+@import "_mixins.scss";
+
+// Max width 425px
+@include mediaSm {
+  // Home
+  .menu {
+    padding: 0 1rem;
+    .logo {
+      img {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    .contact-info {
+      display: none;
+    }
+  }
+
+  // Services
+  #services {
+    padding: 5rem 5rem;
+    .services-slider {
+      display: block;
+      border: 1px solid $primary-color;
+      @include border-radius;
+      .item {
+        border: none;
+        .item-content p {
+          min-height: 17rem;
+        }
+      }
+    }
+  }
+
+  // Prices
+  #prices {
+    .prices-card {
+      width: 90%;
+      background-size: 20rem;
+      background-position: bottom -8rem right -5rem;
+    }
+  }
+
+  // About
+  #about {
+    grid-template-columns: 1fr;
+    .about-img {
+      height: 42rem;
+    }
+  }
+
+  // Testimonials
+  .testimonials {
+    .testimonial {
+      p {
+        height: 15rem;
+      }
+    }
+  }
+
+  // Contact
+  #contacts {
+    display: grid;
+    grid-template-columns: 1fr;
+    .contacts-info {
+      width: 100%;
+      padding: 5rem 5rem;
+      form {
+        .form-group {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    .map {
+      width: 100%;
+      height: 40rem;
+    }
+  }
+}
+
+// Min-width: 426px and Max-width: 767px
+@include mediaMd {
+  // Menu
+  .menu {
+    padding: 0 5rem;
+    .contact-info {
+      display: none;
+    }
+  }
+  // Home
+  #home {
+    min-height: 60vh;
+  }
+
+  // Services
+  #services {
+    padding: 5rem 5rem;
+    .services-slider {
+      display: block;
+      border: 1px solid $primary-color;
+      @include border-radius;
+      .item {
+        width: 100%;
+        border: none;
+        .item-content p {
+          min-height: 13rem;
+        }
+      }
+    }
+  }
+  // Prices
+  #prices {
+    .prices-card {
+      width: 70%;
+      background-size: 25rem;
+      background-position: bottom -8rem right -5rem;
+    }
+  }
+  // About
+  #about {
+    grid-template-columns: 1fr;
+
+    .about-img {
+      height: 42rem;
+    }
+  }
+
+  // Contact
+  #contacts {
+    display: grid;
+    grid-template-columns: 1fr;
+    .contacts-info {
+      width: 100%;
+      padding: 5rem 5rem;
+      form {
+        .form-group {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    .map {
+      width: 100%;
+      height: 40rem;
+    }
+  }
+}
+
+// Min-width: 768px and Max-width: 1025px
+@include mediaLg {
+  // Menu
+  .menu {
+    padding: 0 2rem;
+    .contact-info {
+      width: 60%;
+    }
+  }
+
+  // Home
+  #home {
+    min-height: 60vh;
+  }
+
+  // Services
+  #services {
+    padding: 5rem 5rem;
+    .services-slider {
+      grid-template-columns: repeat(2, 1fr);
+      .item {
+        &:last-child {
+          display: none;
+        }
+        &-content {
+          p {
+            min-height: 15rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Prices
+  #prices {
+    .prices-card {
+      width: 70%;
+      background-size: 40rem;
+      background-position: bottom -8rem right -8rem;
+    }
+  }
+
+  // About
+  #about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Testimonials
+  .testimonials {
+    .testimonial {
+      p {
+        height: 8rem;
+      }
+    }
+  }
+
+  // Contact
+  #contacts {
+    display: grid;
+    grid-template-columns: 1fr;
+    .contacts-info {
+      width: 100%;
+      padding: 5rem 5rem;
+      form {
+        .form-group {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    .map {
+      width: 100%;
+      height: 40rem;
+    }
+  }
+}

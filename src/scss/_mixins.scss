@@ -1,0 +1,55 @@
+@import "_variables.scss";
+
+// Responsive Font
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
+}
+
+// Mixins
+@mixin easeOut {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+@mixin border-radius {
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+@mixin round-radius {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+// Media Query Mixins
+
+@mixin mediaSm {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (min-width: 426px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 768px) and (max-width: 1025px) {
+    @content;
+  }
+}
