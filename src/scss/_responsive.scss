@@ -4,7 +4,7 @@
 @include mediaSm {
   // Home
   .menu {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     .logo {
       img {
         width: 4rem;
@@ -12,7 +12,18 @@
       }
     }
     .contact-info {
-      display: none;
+      width: auto;
+      .contact:nth-child(1) {
+        display: none;
+      }
+      .contact:nth-child(2) {
+        a {
+          padding-left: 0.5rem;
+        }
+      }
+      .contact:nth-child(3) {
+        display: none;
+      }
     }
   }
 
@@ -25,9 +36,13 @@
       @include border-radius;
       .item {
         border: none;
+        min-height: 57rem;
         .item-content p {
-          min-height: 17rem;
+          min-height: 22rem;
         }
+      }
+      .item:last-child {
+        display: none;
       }
     }
   }
@@ -82,9 +97,15 @@
 @include mediaMd {
   // Menu
   .menu {
-    padding: 0 5rem;
+    padding: 0 1rem;
     .contact-info {
-      display: none;
+      width: auto;
+      .contact:nth-child(1) {
+        display: none;
+      }
+      .contact:nth-child(3) {
+        display: none;
+      }
     }
   }
   // Home
@@ -112,7 +133,7 @@
   #prices {
     .prices-card {
       width: 70%;
-      background-size: 25rem;
+      background-size: 20rem;
       background-position: bottom -8rem right -5rem;
     }
   }
@@ -182,7 +203,7 @@
   #prices {
     .prices-card {
       width: 70%;
-      background-size: 40rem;
+      background-size: 35rem;
       background-position: bottom -8rem right -8rem;
     }
   }
