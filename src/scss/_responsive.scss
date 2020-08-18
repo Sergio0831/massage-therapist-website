@@ -19,6 +19,7 @@
       .contact:nth-child(2) {
         a {
           padding-left: 0.5rem;
+          margin-right: 1rem;
         }
       }
       .contact:nth-child(3) {
@@ -68,7 +69,7 @@
   .testimonials {
     .testimonial {
       p {
-        height: 15rem;
+        height: 18rem;
       }
     }
   }
@@ -143,6 +144,15 @@
 
     .about-img {
       height: 42rem;
+    }
+  }
+
+  // Testimonials
+  .testimonials {
+    .testimonial {
+      p {
+        height: 12rem;
+      }
     }
   }
 

@@ -416,7 +416,6 @@ menu {
   .testimonial {
     width: 90%;
     max-width: 90%;
-    height: auto;
     margin: 0 auto;
     background: #fff;
     padding: 3rem 3rem;
@@ -443,6 +442,7 @@ menu {
 
     p {
       @include adaptiv-font(18, 14);
+      height: 6rem;
       font-family: $open-sans;
       line-height: 1.7em;
       color: $text-color;
@@ -452,7 +452,7 @@ menu {
     .button-container {
       .prev-btn,
       .next-btn {
-        margin: 1rem 0.8rem;
+        margin: 0.7rem 0.5rem;
         font-size: 2rem;
         color: $primary-color;
         background: transparent;

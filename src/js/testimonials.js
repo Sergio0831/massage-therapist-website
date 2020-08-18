@@ -2,34 +2,30 @@
 const testimonials = [
   {
     id: 1,
-    name: "Sergejs Ivcenko",
-    job: "Web Developer",
+    name: "Sergejs",
     img: (src = "./img/testimonials/person1.jpg"),
     text:
-      "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic.",
+      "Оксана - мастер своего дела. Перепробовал почти все виды массажа в её исполнении. Любимый - класический. Боль в спине после тяжелого рабочего дня, которая была раньше, пропадает. Главное - регулярность!))",
   },
   {
     id: 2,
-    name: "Brad Bad",
-    job: "Web Designer",
-    img: (src = "./img/testimonials/person2.jpg"),
+    name: "Ineta",
+    img: (src = "./img/testimonials/person5.png"),
     text:
-      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+      "Ļoti profesionāla, patīkama, relaksējošā masāža. Oksana ir brīnišķīgs cilvēks ar zeltam rokām. Noteikti iesāku!",
   },
   {
     id: 3,
-    name: "Peter Jones",
-    job: "CEO",
+    name: "Peter",
     img: (src = "./img/testimonials/person3.jpg"),
     text:
-      "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
+      "Оксана прекрасный специалист, владеющий разными техниками массажа и обладающий, как отличными практическими навыками, так и глубокими медицинскими знаниями. Оксане, спасибо)",
   },
 ];
 
 // Items
 const img = document.getElementById("person-img");
 const name = document.getElementById("name");
-const job = document.getElementById("job");
 const info = document.getElementById("review");
 
 // Buttons
@@ -49,7 +45,6 @@ function showPerson() {
   const item = testimonials[currentItem];
   img.src = item.img;
   name.textContent = item.name;
-  job.textContent = item.job;
   info.textContent = item.text;
 }
 
@@ -70,11 +65,3 @@ prevBtn.addEventListener("click", function () {
   }
   showPerson();
 });
-
-// setInterval(function startSlide() {
-//   currentItem++;
-//   if (currentItem > testimonials.length - 1) {
-//     currentItem = 0;
-//   }
-//   showPerson();
-// }, 1000);
