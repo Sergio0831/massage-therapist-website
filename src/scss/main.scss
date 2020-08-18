@@ -579,7 +579,9 @@ menu {
         }
       }
 
-      a {
+      button {
+        border: none;
+        cursor: pointer;
         text-decoration: none;
         @include adaptiv-font(15, 13);
         font-family: $open-sans;
