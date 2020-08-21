@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // Variables
   var fixedMenu = $(".menu");
-  var slideMenu = $("menu");
+  var slideMenu = $(".nav-menu");
   var menuBtn = $(".menu-btn");
   var menuLinks = $("li a");
   var servicesLinks = $(".item-content a");
@@ -89,4 +89,21 @@ $(document).ready(function () {
       }
     });
   }
+  // Contact Form
+  $("#form").submit(function (event) {
+    event.preventDefault();
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var message = $("#message").val();
+    var submit = $("#sendMail").val();
+
+    $(".form-message").load("ajax/mail.php", {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+      submit: submit,
+    });
+  });
 });

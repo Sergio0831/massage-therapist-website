@@ -10,7 +10,7 @@ const testimonials = [
   {
     id: 2,
     name: "Ineta",
-    img: (src = "./img/testimonials/person5.png"),
+    img: (src = "./img/testimonials/person2.jpg"),
     text:
       "Ļoti profesionāla, patīkama, relaksējošā masāža. Oksana ir brīnišķīgs cilvēks ar zeltam rokām. Noteikti iesāku!",
   },
@@ -25,7 +25,7 @@ const testimonials = [
 
 // Items
 const img = document.getElementById("person-img");
-const name = document.getElementById("name");
+const name = document.getElementsByClassName("name");
 const info = document.getElementById("review");
 
 // Buttons
