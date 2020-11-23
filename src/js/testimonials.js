@@ -5,7 +5,7 @@ const testimonials = [
     name: "Sergejs",
     img: (src = "./img/testimonials/person1.jpg"),
     text:
-      "Оксана - мастер своего дела. Перепробовал почти все виды массажа в её исполнении. Любимый - класический. Боль в спине после тяжелого рабочего дня, которая была раньше, пропадает. Главное - регулярность!))",
+      "Оксана - мастер своего дела. Перепробовал почти все виды массажа в её исполнении. Любимый - класический.Боль в спине после тяжелого рабочего дня, которая была раньше, пропадает.))",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const testimonials = [
 
 // Items
 const img = document.getElementById("person-img");
-const name = document.getElementsByClassName("name");
+const name = document.getElementById("firstName");
 const info = document.getElementById("review");
 
 // Buttons

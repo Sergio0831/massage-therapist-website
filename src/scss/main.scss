@@ -1,6 +1,8 @@
 @import "_config.scss";
 @import "_mixins.scss";
 @import "_variables.scss";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
 
 .menu {
   display: flex;
@@ -10,9 +12,8 @@
   right: 0;
   left: 0;
   z-index: 100;
-
   background-color: lighten($primary-color, 45%);
-  height: 8rem;
+  height: 6rem;
   align-items: center;
   justify-content: space-between;
 
@@ -20,13 +21,14 @@
     display: flex;
     text-decoration: none;
     img {
-      width: 5rem;
-      height: 5rem;
+      width: 4rem;
+      height: 4rem;
+      align-self: center;
     }
     &-text {
       align-self: center;
       font-family: $pacifico;
-      @include adaptiv-font(30, 25);
+      @include adaptiv-font(30, 20);
       color: $primary-color;
     }
   }
@@ -43,18 +45,19 @@
       .fas {
         @include adaptiv-font(25, 12);
         color: $primary-color;
+        align-self: center;
       }
 
       p {
-        @include adaptiv-font(15, 10);
+        @include adaptiv-font(15, 12);
         padding-left: 1rem;
-        margin-top: 0.2rem;
+        align-self: center;
         font-family: $open-sans;
         font-weight: 600;
       }
 
       a {
-        @include adaptiv-font(15, 10);
+        @include adaptiv-font(15, 12);
         padding-left: 1rem;
         margin-top: 0.2rem;
         font-family: $open-sans;
@@ -62,6 +65,18 @@
         text-decoration: none;
         color: #000;
       }
+    }
+  }
+
+  .lang {
+    margin-top: 0.5rem;
+    a {
+      @include adaptiv-font(15, 12);
+      padding: 0.5rem;
+      font-family: $open-sans;
+      font-weight: 600;
+      text-decoration: none;
+      color: $primary-color;
     }
   }
 
@@ -110,7 +125,7 @@
   width: 100%;
   height: auto;
   opacity: 0.9;
-  top: 8rem;
+  top: 6rem;
   z-index: 99;
   display: flex;
   align-items: center;
@@ -188,8 +203,9 @@
     h1 {
       color: #fff;
       font-family: $montserrat;
+      line-height: 4.5rem;
       @include adaptiv-font(50, 30);
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
     }
 
     a {
@@ -212,66 +228,58 @@
 // Section Services
 #services {
   padding: 5rem 10rem;
-
-  .services-slider {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-    box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
-  }
-
-  .item {
-    padding: 2rem;
-    text-align: center;
-    border: 1px solid $primary-color;
-    background-color: #fff;
-    @include border-radius;
-    @include easeOut;
-
-    &:hover {
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  .container {
+    .services-slider {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+      box-shadow: none;
     }
 
-    &-text {
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      font-family: $montserrat;
-      font-weight: $heading-font-weight;
-    }
-
-    img {
-      width: 100%;
-      height: 20rem;
-      object-fit: cover;
-      @include border-radius;
-    }
-
-    &-content {
+    .article {
+      padding: 2rem;
       text-align: center;
-      margin-top: 1rem;
-
-      p {
+      border: 1px solid $primary-color;
+      background-color: #fff;
+      @include border-radius;
+      @include easeOut;
+      &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+      &-heading {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-family: $montserrat;
+        font-weight: $heading-font-weight;
+      }
+      &-img {
+        width: 100%;
+        object-fit: cover;
+        @include border-radius;
+      }
+      &-text {
         min-height: 18rem;
+        margin-top: 1rem;
         margin-bottom: 1rem;
-        @include adaptiv-font(15, 14);
+        @include adaptiv-font(16, 12);
+        line-height: 2.1rem;
         font-family: $open-sans;
         font-weight: $text-font-weight;
       }
-    }
+      &-btn {
+        text-decoration: none;
+        @include adaptiv-font(15, 13);
+        font-family: $open-sans;
+        color: #fff;
+        background-color: $primary-color;
+        padding: 1rem 2rem;
+        @include border-radius;
+        @include easeOut;
 
-    &-button {
-      text-decoration: none;
-      @include adaptiv-font(15, 13);
-      font-family: $open-sans;
-      color: #fff;
-      background-color: $primary-color;
-      padding: 1rem 2rem;
-      @include border-radius;
-      @include easeOut;
-
-      &:hover {
-        background-color: $button-hover;
+        &:hover {
+          background-color: $button-hover;
+        }
       }
     }
   }
@@ -318,16 +326,16 @@
     padding: 5rem 0;
     width: 50%;
     height: 100%;
-    background-image: url(../img/orhideja-stone.png);
+    background-image: url(../img/beauty.svg);
     background-repeat: no-repeat;
-    background-size: 25rem;
-    background-position: bottom right;
+    background-size: 20rem;
+    background-position: bottom 2rem right 2rem;
     background-color: lighten($primary-color, 45%);
     text-align: center;
     @include border-radius;
 
     h3 {
-      margin-top: 2rem;
+      margin-top: 1rem;
       @include adaptiv-font(20, 18);
       font-family: $montserrat;
       color: $text-color;
@@ -336,9 +344,10 @@
 
     .packed {
       h4 {
+        margin-top: 1rem;
         @include adaptiv-font(18, 16);
         font-family: $open-sans;
-        line-height: 1.7em;
+        line-height: 2.7rem;
         color: $text-color;
         font-weight: $heading-font-weight;
       }
@@ -346,7 +355,7 @@
       p {
         @include adaptiv-font(18, 16);
         font-family: $open-sans;
-        line-height: 1.7em;
+        line-height: 2.7rem;
         color: $text-color;
         font-weight: $text-font-weight;
       }
@@ -361,12 +370,12 @@
     background-color: #fff;
 
     p {
-      max-width: 80%;
-      text-align: center;
+      max-width: 70%;
+      text-align: left;
       margin: 1rem auto;
-      @include adaptiv-font(18, 15);
+      @include adaptiv-font(18, 14);
       font-family: $open-sans;
-      line-height: 1.7em;
+      line-height: 2.7rem;
       color: $text-color;
       font-weight: $text-font-weight;
     }
@@ -405,7 +414,8 @@
 .testimonials {
   padding: 5rem 0;
   h3 {
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     text-align: center;
     @include adaptiv-font(20, 18);
     font-family: $montserrat;
@@ -414,8 +424,8 @@
   }
 
   .testimonial {
-    width: 90%;
-    max-width: 90%;
+    width: 80%;
+    max-width: 80%;
     margin: 0 auto;
     background: #fff;
     padding: 3rem 3rem;
@@ -432,19 +442,11 @@
       font-weight: $heading-font-weight;
     }
 
-    h5 {
-      @include adaptiv-font(18, 15);
-      font-family: $open-sans;
-      line-height: 1.7em;
-      color: $text-color;
-      font-weight: $heading-font-weight;
-    }
-
     p {
+      margin-bottom: 1rem;
       @include adaptiv-font(18, 14);
-      height: 6rem;
       font-family: $open-sans;
-      line-height: 1.7em;
+      line-height: 2.7rem;
       color: $text-color;
       font-weight: $text-font-weight;
     }
@@ -580,10 +582,11 @@
       }
 
       button {
+        width: 100%;
         border: none;
         cursor: pointer;
         text-decoration: none;
-        @include adaptiv-font(15, 13);
+        @include adaptiv-font(20, 18);
         font-family: $open-sans;
         color: #fff;
         background-color: $primary-color;
@@ -651,7 +654,8 @@ footer {
 
     a {
       @include adaptiv-font(18, 15);
-      color: $text-color;
+      text-decoration: none;
+      color: $primary-color;
     }
   }
 }

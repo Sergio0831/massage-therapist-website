@@ -4,11 +4,14 @@
 @include mediaSm {
   // Home
   .menu {
-    padding: 0 0.5rem;
+    padding: 0 2rem;
     .logo {
       img {
         width: 4rem;
         height: 4rem;
+      }
+      &-text {
+        display: none;
       }
     }
     .contact-info {
@@ -19,7 +22,6 @@
       .contact:nth-child(2) {
         a {
           padding-left: 0.5rem;
-          margin-right: 1rem;
         }
       }
       .contact:nth-child(3) {
@@ -28,23 +30,21 @@
     }
   }
 
+  #home {
+    min-height: 70vh;
+  }
+
   // Services
   #services {
     padding: 5rem 5rem;
     .services-slider {
-      display: block;
+      display: block !important;
       border: 1px solid $primary-color;
       @include border-radius;
-      .item {
-        border: none;
-        min-height: 57rem;
-        .item-content p {
-          min-height: 22rem;
-        }
-      }
-      .item:last-child {
-        display: none;
-      }
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5) !important;
+    }
+    .article {
+      border: none !important;
     }
   }
 
@@ -53,6 +53,7 @@
     .prices-card {
       width: 90%;
       background-size: 10rem;
+      background-position: bottom 2rem right 1rem;
     }
   }
 
@@ -61,15 +62,6 @@
     grid-template-columns: 1fr;
     .about-img {
       height: 42rem;
-    }
-  }
-
-  // Testimonials
-  .testimonials {
-    .testimonial {
-      p {
-        height: 18rem;
-      }
     }
   }
 
@@ -98,6 +90,12 @@
   // Menu
   .menu {
     padding: 0 1rem;
+    .logo {
+      img {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
     .contact-info {
       width: auto;
       .contact:nth-child(1) {
@@ -110,47 +108,38 @@
   }
   // Home
   #home {
-    min-height: 60vh;
+    min-height: 70vh;
   }
 
   // Services
   #services {
     padding: 5rem 5rem;
     .services-slider {
-      display: block;
+      display: block !important;
       border: 1px solid $primary-color;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5) !important;
       @include border-radius;
-      .item {
-        width: 100%;
-        border: none;
-        .item-content p {
-          min-height: 13rem;
-        }
+    }
+    .article {
+      border: none !important;
+      &-text {
+        min-height: 12rem !important;
       }
     }
   }
   // Prices
   #prices {
     .prices-card {
-      width: 70%;
-      background-size: 13rem;
+      width: 80%;
+      background-size: 12rem;
+      background-position: bottom 2rem right 1rem;
     }
   }
   // About
   #about {
     grid-template-columns: 1fr;
-
     .about-img {
       height: 42rem;
-    }
-  }
-
-  // Testimonials
-  .testimonials {
-    .testimonial {
-      p {
-        height: 12rem;
-      }
     }
   }
 
@@ -179,31 +168,22 @@
   // Menu
   .menu {
     padding: 0 2rem;
+
     .contact-info {
-      width: 60%;
+      width: 57%;
     }
   }
 
   // Home
   #home {
-    min-height: 60vh;
+    min-height: 80vh;
   }
 
   // Services
   #services {
     padding: 5rem 5rem;
     .services-slider {
-      grid-template-columns: repeat(2, 1fr);
-      .item {
-        &:last-child {
-          display: none;
-        }
-        &-content {
-          p {
-            min-height: 15rem;
-          }
-        }
-      }
+      grid-template-columns: repeat(2, 1fr) !important;
     }
   }
 
@@ -218,15 +198,6 @@
   // About
   #about {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  // Testimonials
-  .testimonials {
-    .testimonial {
-      p {
-        height: 8rem;
-      }
-    }
   }
 
   // Contact

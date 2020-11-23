@@ -31,6 +31,10 @@ body {
   background-color: $primary-color;
 }
 
+a {
+  display: inline-block;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -41,4 +45,9 @@ a:hover {
 
 textarea {
   resize: none;
+}
+
+.lang-active {
+  background: #fff;
+  @include border-radius;
 }

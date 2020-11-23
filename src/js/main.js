@@ -1,10 +1,11 @@
-$(document).ready(function () {
+
+$(function () {
   // Variables
   var fixedMenu = $(".menu");
   var slideMenu = $(".nav-menu");
   var menuBtn = $(".menu-btn");
   var menuLinks = $("li a");
-  var servicesLinks = $(".item-content a");
+  var servicesLinks = $(".article a");
 
   // Transparent menu
   $(window).on("scroll", function () {
@@ -17,7 +18,7 @@ $(document).ready(function () {
   });
 
   // Scroll Top Button
-  $(window).scroll(function () {
+  $(window).on('scroll', function () {
     let scroll = $(window).scrollTop() + $(window).height();
     let offset = $("#contacts").offset().top;
     if (scroll > offset) {
@@ -26,18 +27,18 @@ $(document).ready(function () {
       $("#topBtn").fadeOut();
     }
   });
-  $("#topBtn").click(function () {
+  $("#topBtn").on('click', function () {
     $("html, body").animate({ scrollTop: 0 }, 500);
   });
 
   // Close and open menu
-  menuBtn.click(function () {
+  menuBtn.on('click', function () {
     $(this).toggleClass("close");
     slideMenu.toggleClass("active-menu");
   });
 
   // Active menu link
-  menuLinks.click(function () {
+  menuLinks.on('click', function () {
     menuLinks.removeClass("active");
     $(this).addClass("active");
   });
@@ -90,7 +91,7 @@ $(document).ready(function () {
     });
   }
   // Contact Form
-  $("#form").submit(function (event) {
+  $("#form").on('submit', function (event) {
     event.preventDefault();
     var name = $("#name").val();
     var email = $("#email").val();
