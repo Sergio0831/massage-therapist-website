@@ -1,683 +1,682 @@
-@import "_config.scss";
-@import "_mixins.scss";
-@import "_variables.scss";
-@import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+@import '_config.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/slick-carousel/slick/slick-theme.scss';
 
 .menu {
-  display: flex;
-  padding: 0 5rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 100;
-  background-color: lighten($primary-color, 45%);
-  height: 6rem;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	padding: 0 5rem;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	background-color: lighten($primary-color, 45%);
+	height: 6rem;
+	align-items: center;
+	justify-content: space-between;
 
-  .logo {
-    display: flex;
-    text-decoration: none;
-    img {
-      width: 4rem;
-      height: 4rem;
-      align-self: center;
-    }
-    &-text {
-      align-self: center;
-      font-family: $pacifico;
-      @include adaptiv-font(30, 20);
-      color: $primary-color;
-    }
-  }
+	.logo {
+		display: flex;
+		text-decoration: none;
+		img {
+			width: 4rem;
+			height: 4rem;
+			align-self: center;
+		}
+		&-text {
+			align-self: center;
+			font-family: $pacifico;
+			@include adaptiv-font(30, 20);
+			color: $primary-color;
+		}
+	}
 
-  .contact-info {
-    display: flex;
-    margin-top: 0.5rem;
-    width: 50%;
-    justify-content: space-between;
+	.contact-info {
+		display: flex;
+		margin-top: 0.5rem;
+		width: 50%;
+		justify-content: space-between;
 
-    .contact {
-      display: flex;
+		.contact {
+			display: flex;
 
-      .fas {
-        @include adaptiv-font(25, 12);
-        color: $primary-color;
-        align-self: center;
-      }
+			.fas {
+				@include adaptiv-font(25, 12);
+				color: $primary-color;
+				align-self: center;
+			}
 
-      p {
-        @include adaptiv-font(15, 12);
-        padding-left: 1rem;
-        align-self: center;
-        font-family: $open-sans;
-        font-weight: 600;
-      }
+			p {
+				@include adaptiv-font(15, 12);
+				padding-left: 1rem;
+				align-self: center;
+				font-family: $open-sans;
+				font-weight: 600;
+			}
 
-      a {
-        @include adaptiv-font(15, 12);
-        padding-left: 1rem;
-        margin-top: 0.2rem;
-        font-family: $open-sans;
-        font-weight: 600;
-        text-decoration: none;
-        color: #000;
-      }
-    }
-  }
+			a {
+				@include adaptiv-font(15, 12);
+				padding-left: 1rem;
+				margin-top: 0.2rem;
+				font-family: $open-sans;
+				font-weight: 600;
+				text-decoration: none;
+				color: #000;
+			}
+		}
+	}
 
-  .lang {
-    margin-top: 0.5rem;
-    a {
-      @include adaptiv-font(15, 12);
-      padding: 0.5rem;
-      font-family: $open-sans;
-      font-weight: 600;
-      text-decoration: none;
-      color: $primary-color;
-    }
-  }
+	.lang {
+		margin-top: 0.5rem;
+		a {
+			@include adaptiv-font(15, 12);
+			padding: 0.5rem;
+			font-family: $open-sans;
+			font-weight: 600;
+			text-decoration: none;
+			color: $primary-color;
+		}
+	}
 
-  &-btn {
-    margin-top: 1rem;
-    cursor: pointer;
+	&-btn {
+		margin-top: 1rem;
+		cursor: pointer;
 
-    .btn-line {
-      width: 28px;
-      height: 3px;
-      margin: 0 0 5px 0;
-      background: #000;
-      @include easeOut;
-      @include border-radius;
-    }
+		.btn-line {
+			width: 28px;
+			height: 3px;
+			margin: 0 0 5px 0;
+			background: #000;
+			@include easeOut;
+			@include border-radius;
+		}
 
-    &.close {
-      .btn-line {
-        &:nth-child(1) {
-          transform: rotate(45deg) translate(6px, 6px);
-          -webkit-transform: rotate(45deg) translate(6px, 6px);
-          -moz-transform: rotate(45deg) translate(6px, 6px);
-          -ms-transform: rotate(45deg) translate(6px, 6px);
-          -o-transform: rotate(45deg) translate(6px, 6px);
-        }
+		&.close {
+			.btn-line {
+				&:nth-child(1) {
+					transform: rotate(45deg) translate(6px, 6px);
+					-webkit-transform: rotate(45deg) translate(6px, 6px);
+					-moz-transform: rotate(45deg) translate(6px, 6px);
+					-ms-transform: rotate(45deg) translate(6px, 6px);
+					-o-transform: rotate(45deg) translate(6px, 6px);
+				}
 
-        &:nth-child(2) {
-          opacity: 0;
-        }
+				&:nth-child(2) {
+					opacity: 0;
+				}
 
-        &:nth-child(3) {
-          transform: rotate(-45deg) translate(5px, -6px);
-          -webkit-transform: rotate(-45deg) translate(5px, -6px);
-          -moz-transform: rotate(-45deg) translate(5px, -6px);
-          -ms-transform: rotate(-45deg) translate(5px, -6px);
-          -o-transform: rotate(-45deg) translate(5px, -6px);
-        }
-      }
-    }
-  }
+				&:nth-child(3) {
+					transform: rotate(-45deg) translate(5px, -6px);
+					-webkit-transform: rotate(-45deg) translate(5px, -6px);
+					-moz-transform: rotate(-45deg) translate(5px, -6px);
+					-ms-transform: rotate(-45deg) translate(5px, -6px);
+					-o-transform: rotate(-45deg) translate(5px, -6px);
+				}
+			}
+		}
+	}
 }
 
 .nav-menu {
-  position: fixed;
-  padding: 2rem 0;
-  width: 100%;
-  height: auto;
-  opacity: 0.9;
-  top: 6rem;
-  z-index: 99;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: $montserrat;
-  background-color: lighten($primary-color, 45%);
-  transform: translateY(-150%);
-  -webkit-transform: translateY(-150%);
-  -moz-transform: translateY(-150%);
-  -ms-transform: translateY(-150%);
-  -o-transform: translateY(-150%);
-  @include easeOut;
+	position: fixed;
+	padding: 2rem 0;
+	width: 100%;
+	height: auto;
+	opacity: 0.9;
+	top: 6rem;
+	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: $montserrat;
+	background-color: lighten($primary-color, 45%);
+	transform: translateY(-150%);
+	-webkit-transform: translateY(-150%);
+	-moz-transform: translateY(-150%);
+	-ms-transform: translateY(-150%);
+	-o-transform: translateY(-150%);
+	@include easeOut;
 
-  .contact {
-    display: none;
-  }
+	.contact {
+		display: none;
+	}
 
-  ul {
-    list-style: none;
-    line-height: 2.5;
+	ul {
+		list-style: none;
+		line-height: 2.5;
 
-    li {
-      a {
-        display: inline-block;
-        @include adaptiv-font(25, 20);
-        color: $primary-color;
-        text-decoration: none;
+		li {
+			a {
+				display: inline-block;
+				@include adaptiv-font(25, 20);
+				color: $primary-color;
+				text-decoration: none;
 
-        &:hover::after {
-          width: 100%;
-        }
+				&:hover::after {
+					width: 100%;
+				}
 
-        &::after {
-          content: "";
-          display: block;
-          width: 0%;
-          height: 2px;
-          background: $primary-color;
-          @include easeOut;
-          transform: translateY(-1rem);
-          -webkit-transform: translateY(-1rem);
-          -moz-transform: translateY(-1rem);
-          -ms-transform: translateY(-1rem);
-          -o-transform: translateY(-1rem);
-        }
-      }
-      .active::after {
-        width: 100%;
-      }
-    }
-  }
+				&::after {
+					content: '';
+					display: block;
+					width: 0%;
+					height: 2px;
+					background: $primary-color;
+					@include easeOut;
+					transform: translateY(-1rem);
+					-webkit-transform: translateY(-1rem);
+					-moz-transform: translateY(-1rem);
+					-ms-transform: translateY(-1rem);
+					-o-transform: translateY(-1rem);
+				}
+			}
+			.active::after {
+				width: 100%;
+			}
+		}
+	}
 }
 
 .active-menu {
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
 }
 
 #home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/massage-bg.jpg");
-  min-height: 80vh;
-  max-width: 100%;
-  background-position: center;
-  background-size: cover;
-  display: grid;
-  align-items: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('../img/massage-bg.jpg');
+	min-height: 80vh;
+	max-width: 100%;
+	background-position: center;
+	background-size: cover;
+	display: grid;
+	align-items: center;
 
-  .home-text {
-    text-align: center;
+	.home-text {
+		text-align: center;
 
-    h1 {
-      color: #fff;
-      font-family: $montserrat;
-      line-height: 4.5rem;
-      @include adaptiv-font(50, 30);
-      margin-bottom: 3rem;
-    }
+		h1 {
+			color: #fff;
+			font-family: $montserrat;
+			line-height: 4.5rem;
+			@include adaptiv-font(50, 30);
+			margin-bottom: 3rem;
+		}
 
-    a {
-      text-decoration: none;
-      @include adaptiv-font(20, 15);
-      font-family: $open-sans;
-      color: #fff;
-      background-color: $primary-color;
-      padding: 1rem 2rem;
-      @include border-radius;
-      @include easeOut;
+		a {
+			text-decoration: none;
+			@include adaptiv-font(20, 15);
+			font-family: $open-sans;
+			color: #fff;
+			background-color: $primary-color;
+			padding: 1rem 2rem;
+			@include border-radius;
+			@include easeOut;
 
-      &:hover {
-        background-color: $button-hover;
-      }
-    }
-  }
+			&:hover {
+				background-color: $button-hover;
+			}
+		}
+	}
 }
 
 // Section Services
 #services {
-  padding: 5rem 10rem;
-  .container {
-    .services-slider {
-      margin-top: 3rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 2rem;
-      box-shadow: none;
-    }
+	padding: 5rem 10rem;
+	.container {
+		.services-slider {
+			margin-top: 3rem;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 2rem;
+			box-shadow: none;
+		}
 
-    .article {
-      padding: 2rem;
-      text-align: center;
-      border: 1px solid $primary-color;
-      background-color: #fff;
-      @include border-radius;
-      @include easeOut;
-      &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-      }
-      &-heading {
-        margin-bottom: 2rem;
-        font-size: 2rem;
-        font-family: $montserrat;
-        font-weight: $heading-font-weight;
-      }
-      &-img {
-        width: 100%;
-        object-fit: cover;
-        @include border-radius;
-      }
-      &-text {
-        min-height: 18rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        @include adaptiv-font(16, 12);
-        line-height: 2.1rem;
-        font-family: $open-sans;
-        font-weight: $text-font-weight;
-      }
-      &-btn {
-        text-decoration: none;
-        @include adaptiv-font(15, 13);
-        font-family: $open-sans;
-        color: #fff;
-        background-color: $primary-color;
-        padding: 1rem 2rem;
-        @include border-radius;
-        @include easeOut;
+		.article {
+			padding: 2rem;
+			text-align: center;
+			border: 1px solid $primary-color;
+			background-color: #fff;
+			@include border-radius;
+			@include easeOut;
+			&:hover {
+				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			}
+			&-heading {
+				margin-bottom: 2rem;
+				font-size: 2rem;
+				font-family: $montserrat;
+				font-weight: $heading-font-weight;
+			}
+			&-img {
+				width: 100%;
+				object-fit: cover;
+				@include border-radius;
+			}
+			&-text {
+				min-height: 18rem;
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				@include adaptiv-font(16, 12);
+				line-height: 2.1rem;
+				font-family: $open-sans;
+				font-weight: $text-font-weight;
+			}
+			&-btn {
+				text-decoration: none;
+				@include adaptiv-font(15, 13);
+				font-family: $open-sans;
+				color: #fff;
+				background-color: $primary-color;
+				padding: 1rem 2rem;
+				@include border-radius;
+				@include easeOut;
 
-        &:hover {
-          background-color: $button-hover;
-        }
-      }
-    }
-  }
+				&:hover {
+					background-color: $button-hover;
+				}
+			}
+		}
+	}
 }
 
 .slick-active {
-  outline: none;
+	outline: none;
 }
 .arrow {
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  z-index: 99;
-  width: 3rem;
-  height: 4rem;
-  border: none;
-  cursor: pointer;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	z-index: 99;
+	width: 3rem;
+	height: 4rem;
+	border: none;
+	cursor: pointer;
 }
 .prev {
-  background: url(../img/prev.png) center no-repeat;
-  left: -4rem;
-  background-size: 70%;
+	background: url(../img/prev.png) center no-repeat;
+	left: -4rem;
+	background-size: 70%;
 }
 .next {
-  background: url(../img/next.png) center no-repeat;
-  right: -4rem;
-  background-size: 70%;
+	background: url(../img/next.png) center no-repeat;
+	right: -4rem;
+	background-size: 70%;
 }
 
 // Section Prices
 .prices {
-  padding: 5rem 0;
-  width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/prices-bg/prices1-bg.jpg");
-  // height: 100%;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+	padding: 5rem 0;
+	width: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('../img/prices-bg/prices1-bg.jpg');
+	// height: 100%;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
 
-  &-card {
-    margin: 0 auto;
-    padding: 5rem 0;
-    width: 50%;
-    height: 100%;
-    background-image: url(../img/beauty.svg);
-    background-repeat: no-repeat;
-    background-size: 20rem;
-    background-position: bottom 2rem right 2rem;
-    background-color: lighten($primary-color, 45%);
-    text-align: center;
-    @include border-radius;
+	&-card {
+		margin: 0 auto;
+		padding: 5rem 0;
+		width: 50%;
+		height: 100%;
+		background-image: url(../img/beauty.svg);
+		background-repeat: no-repeat;
+		background-size: 20rem;
+		background-position: bottom 2rem right 2rem;
+		background-color: lighten($primary-color, 45%);
+		text-align: center;
+		@include border-radius;
 
-    h3 {
-      margin-top: 1rem;
-      @include adaptiv-font(20, 18);
-      font-family: $montserrat;
-      color: $text-color;
-      font-weight: $heading-font-weight;
-    }
+		h3 {
+			margin-top: 1rem;
+			@include adaptiv-font(20, 18);
+			font-family: $montserrat;
+			color: $text-color;
+			font-weight: $heading-font-weight;
+		}
 
-    .packed {
-      h4 {
-        margin-top: 1rem;
-        @include adaptiv-font(18, 16);
-        font-family: $open-sans;
-        line-height: 2.7rem;
-        color: $text-color;
-        font-weight: $heading-font-weight;
-      }
+		.packed {
+			h4 {
+				margin-top: 1rem;
+				@include adaptiv-font(18, 16);
+				font-family: $open-sans;
+				line-height: 2.7rem;
+				color: $text-color;
+				font-weight: $heading-font-weight;
+			}
 
-      p {
-        @include adaptiv-font(18, 16);
-        font-family: $open-sans;
-        line-height: 2.7rem;
-        color: $text-color;
-        font-weight: $text-font-weight;
-      }
-    }
-  }
+			p {
+				@include adaptiv-font(18, 16);
+				font-family: $open-sans;
+				line-height: 2.7rem;
+				color: $text-color;
+				font-weight: $text-font-weight;
+			}
+		}
+	}
 }
 
 // Section About
 .about {
-  &-text {
-    padding: 5rem 0;
-    background-color: #fff;
+	&-text {
+		padding: 5rem 0;
+		background-color: #fff;
 
-    p {
-      max-width: 70%;
-      text-align: left;
-      margin: 1rem auto;
-      @include adaptiv-font(18, 14);
-      font-family: $open-sans;
-      line-height: 2.7rem;
-      color: $text-color;
-      font-weight: $text-font-weight;
-    }
-  }
+		p {
+			max-width: 70%;
+			text-align: left;
+			margin: 1rem auto;
+			@include adaptiv-font(18, 14);
+			font-family: $open-sans;
+			line-height: 2.7rem;
+			color: $text-color;
+			font-weight: $text-font-weight;
+		}
+	}
 
-  .img-container {
-    position: relative;
-    height: 300px;
-    width: 300px;
-    margin: 5rem auto;
-    @include round-radius;
+	.img-container {
+		position: relative;
+		height: 300px;
+		width: 300px;
+		margin: 5rem auto;
+		@include round-radius;
 
-    &:before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: $primary-color;
-      top: -5px;
-      right: -10px;
-      @include round-radius;
-    }
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: $primary-color;
+			top: -5px;
+			right: -10px;
+			@include round-radius;
+		}
 
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: relative;
-      @include round-radius;
-    }
-  }
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: relative;
+			@include round-radius;
+		}
+	}
 }
 
 // Section Testimonials
 .testimonials {
-  padding: 5rem 0;
-  h3 {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    @include adaptiv-font(20, 18);
-    font-family: $montserrat;
-    color: $text-color;
-    font-weight: $heading-font-weight;
-  }
+	padding: 5rem 0;
+	h3 {
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+		text-align: center;
+		@include adaptiv-font(20, 18);
+		font-family: $montserrat;
+		color: $text-color;
+		font-weight: $heading-font-weight;
+	}
 
-  .testimonial {
-    width: 80%;
-    max-width: 80%;
-    margin: 0 auto;
-    background: #fff;
-    padding: 3rem 3rem;
-    text-align: center;
-    box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
-    @include border-radius;
+	.testimonial {
+		width: 80%;
+		max-width: 80%;
+		margin: 0 auto;
+		background: #fff;
+		padding: 3rem 3rem;
+		text-align: center;
+		box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+		@include border-radius;
 
-    h4 {
-      margin-top: 1rem;
-      @include adaptiv-font(18, 16);
-      font-family: $open-sans;
-      line-height: 1.7em;
-      color: $text-color;
-      font-weight: $heading-font-weight;
-    }
+		h4 {
+			margin-top: 1rem;
+			@include adaptiv-font(18, 16);
+			font-family: $open-sans;
+			line-height: 1.7em;
+			color: $text-color;
+			font-weight: $heading-font-weight;
+		}
 
-    p {
-      margin-bottom: 1rem;
-      @include adaptiv-font(18, 14);
-      font-family: $open-sans;
-      line-height: 2.7rem;
-      color: $text-color;
-      font-weight: $text-font-weight;
-    }
+		p {
+			margin-bottom: 1rem;
+			@include adaptiv-font(18, 14);
+			font-family: $open-sans;
+			line-height: 2.7rem;
+			color: $text-color;
+			font-weight: $text-font-weight;
+		}
 
-    .button-container {
-      .prev-btn,
-      .next-btn {
-        margin: 0.7rem 0.5rem;
-        font-size: 2rem;
-        color: $primary-color;
-        background: transparent;
-        border-color: transparent;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        @include easeOut;
+		.button-container {
+			.prev-btn,
+			.next-btn {
+				margin: 0.7rem 0.5rem;
+				font-size: 2rem;
+				color: $primary-color;
+				background: transparent;
+				border-color: transparent;
+				cursor: pointer;
+				border: none;
+				@include easeOut;
 
-        &:hover {
-          transform: scale(1.5);
-          -webkit-transform: scale(1.5);
-          -moz-transform: scale(1.5);
-          -ms-transform: scale(1.5);
-          -o-transform: scale(1.5);
-        }
-      }
+				&:hover {
+					transform: scale(1.5);
+					-webkit-transform: scale(1.5);
+					-moz-transform: scale(1.5);
+					-ms-transform: scale(1.5);
+					-o-transform: scale(1.5);
+				}
+			}
 
-      .fas {
-        font-size: 2rem;
-      }
-    }
-  }
+			.fas {
+				font-size: 2rem;
+			}
+		}
+	}
 
-  .img-container {
-    position: relative;
-    height: 150px;
-    width: 150px;
-    margin: 0 auto;
-    @include round-radius;
+	.img-container {
+		position: relative;
+		height: 150px;
+		width: 150px;
+		margin: 0 auto;
+		@include round-radius;
 
-    &:before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: $primary-color;
-      top: -5px;
-      right: -10px;
-      @include round-radius;
-    }
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: $primary-color;
+			top: -5px;
+			right: -10px;
+			@include round-radius;
+		}
 
-    &:after {
-      display: grid;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: "\f10e";
-      position: absolute;
-      top: 10px;
-      left: 0;
-      width: 30px;
-      height: 30px;
-      background: $primary-color;
-      color: #fff;
-      place-items: center;
-      @include round-radius;
-    }
+		&:after {
+			display: grid;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			content: '\f10e';
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			background: $primary-color;
+			color: #fff;
+			place-items: center;
+			@include round-radius;
+		}
 
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: relative;
-      @include round-radius;
-    }
-  }
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: relative;
+			@include round-radius;
+		}
+	}
 }
 
 // Section Contacts
 .contacts {
-  display: flex;
-  width: 100%;
-  min-height: 100%;
+	display: flex;
+	width: 100%;
+	min-height: 100%;
 
-  &-info {
-    width: 50%;
-    padding: 5rem 10rem;
-    background: #fff;
+	&-info {
+		width: 50%;
+		padding: 5rem 10rem;
+		background: #fff;
 
-    form {
-      margin-top: 3rem;
-      text-align: center;
+		form {
+			margin-top: 3rem;
+			text-align: center;
 
-      .form-group {
-        position: relative;
-        text-align: left;
-        display: block;
-        margin-bottom: 5rem;
+			.form-group {
+				position: relative;
+				text-align: left;
+				display: block;
+				margin-bottom: 5rem;
 
-        .form-control {
-          border: none;
-          border-bottom: 0.1rem solid $primary-color;
-          display: block;
-          width: 100%;
-          height: 5rem;
-          font-size: 1.5rem;
-          background: none;
-          font-family: $open-sans;
-          transition: all 0.15s ease;
-          &:focus,
-          &:valid {
-            border-bottom: 0.2rem solid $primary-color;
-            & + span {
-              transform: translateY(-2.2rem) scale(0.8);
-            }
-          }
-        }
+				.form-control {
+					border: none;
+					border-bottom: 0.1rem solid $primary-color;
+					display: block;
+					width: 100%;
+					height: 5rem;
+					font-size: 1.5rem;
+					background: none;
+					font-family: $open-sans;
+					transition: all 0.15s ease;
+					&:focus,
+					&:valid {
+						border-bottom: 0.2rem solid $primary-color;
+						& + span {
+							transform: translateY(-2.2rem) scale(0.8);
+						}
+					}
+				}
 
-        span {
-          @include adaptiv-font(20, 18);
-          color: $primary-color;
-          font-family: $open-sans;
-          position: absolute;
-          top: 1rem;
-          transform-origin: 0 0;
-          cursor: text;
-          @include easeOut;
-        }
-        textarea.form-control {
-          padding-top: 1.5rem;
-          padding-bottom: 1rem;
-          outline: none;
-        }
-      }
+				span {
+					@include adaptiv-font(20, 18);
+					color: $primary-color;
+					font-family: $open-sans;
+					position: absolute;
+					top: 1rem;
+					transform-origin: 0 0;
+					cursor: text;
+					@include easeOut;
+				}
+				textarea.form-control {
+					padding-top: 1.5rem;
+					padding-bottom: 1rem;
+					outline: none;
+				}
+			}
 
-      button {
-        width: 100%;
-        border: none;
-        cursor: pointer;
-        text-decoration: none;
-        @include adaptiv-font(20, 18);
-        font-family: $open-sans;
-        color: #fff;
-        background-color: $primary-color;
-        padding: 1rem 2rem;
-        @include border-radius;
-        @include easeOut;
+			button {
+				width: 100%;
+				border: none;
+				cursor: pointer;
+				text-decoration: none;
+				@include adaptiv-font(20, 18);
+				font-family: $open-sans;
+				color: #fff;
+				background-color: $primary-color;
+				padding: 1rem 2rem;
+				@include border-radius;
+				@include easeOut;
 
-        &:hover {
-          background-color: $button-hover;
-        }
-      }
-    }
-  }
+				&:hover {
+					background-color: $button-hover;
+				}
+			}
+		}
+	}
 
-  .alert-success {
-    max-width: 100%;
-    background: $primary-color;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    display: none;
-    h3 {
-      color: #fff;
-      @include adaptiv-font(18, 14);
-      font-family: $montserrat;
-      font-weight: $text-font-weight;
-    }
-    p {
-      margin: 0;
-      color: #fff;
-      @include adaptiv-font(14, 12);
-      font-family: $open-sans;
-      font-weight: $text-font-weight;
-    }
-  }
+	.alert-success {
+		max-width: 100%;
+		background: $primary-color;
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		-o-border-radius: 5px;
+		display: none;
+		h3 {
+			color: #fff;
+			@include adaptiv-font(18, 14);
+			font-family: $montserrat;
+			font-weight: $text-font-weight;
+		}
+		p {
+			margin: 0;
+			color: #fff;
+			@include adaptiv-font(14, 12);
+			font-family: $open-sans;
+			font-weight: $text-font-weight;
+		}
+	}
 
-  .map {
-    width: 50%;
-  }
+	.map {
+		width: 50%;
+	}
 
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+	iframe {
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
 }
 
 // Footer
 footer {
-  padding: 3rem 0;
-  background-color: lighten($primary-color, 45%);
+	padding: 3rem 0;
+	background-color: lighten($primary-color, 45%);
 
-  p {
-    color: $text-color;
-    text-align: center;
-    @include adaptiv-font(18, 16);
-    font-family: $open-sans;
-    font-weight: $text-font-weight;
+	p {
+		color: $text-color;
+		text-align: center;
+		@include adaptiv-font(18, 16);
+		font-family: $open-sans;
+		font-weight: $text-font-weight;
 
-    a {
-      @include adaptiv-font(18, 15);
-      text-decoration: none;
-      color: $primary-color;
-    }
-  }
+		a {
+			@include adaptiv-font(18, 15);
+			text-decoration: none;
+			color: $primary-color;
+		}
+	}
 }
 
 // Scroll Top Button
 #topBtn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  cursor: pointer;
-  width: 5rem;
-  height: 5rem;
-  background: $primary-color;
-  color: #fff;
-  border: none;
-  outline: none;
-  // display: none;
-  opacity: 0.8;
-  @include border-radius;
-  .fas {
-    font-size: 2rem;
-  }
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	cursor: pointer;
+	width: 5rem;
+	height: 5rem;
+	background: $primary-color;
+	color: #fff;
+	border: none;
+	outline: none;
+	// display: none;
+	opacity: 0.8;
+	@include border-radius;
+	.fas {
+		font-size: 2rem;
+	}
 }
 
-@import "_responsive.scss";
+@import '_responsive.scss';
