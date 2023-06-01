@@ -1,15 +1,16 @@
-// Fonts
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,600&display=swap");
+@import '_fonts.scss';
 
-$open-sans: "Open Sans", sans-serif;
-$montserrat: "Montseratt", sans-serif;
-$pacifico: "Pacifico", cursive;
+// Fonts
+$open-sans: 'Open Sans', sans-serif;
+$montserrat: 'Montseratt', sans-serif;
+$pacifico: 'Pacifico', cursive;
 
 // Font weight
-$heading-font-weight: 500;
-$text-font-weight: 300;
+$bold-font-weight: 700;
+$semi-bold-font-weight: 600;
+$medium-font-weight: 500;
+$regular-font-weight: 400;
+$light-font-weight: 300;
 
 // Colors
 $primary-color: #ed1e79;

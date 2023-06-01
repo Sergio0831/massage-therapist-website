@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import htmlmin from 'gulp-htmlmin';
-import cache from 'gulp-cache';
 import gulpSass from 'gulp-sass';
 import sass from 'sass';
 import sourcemaps from 'gulp-sourcemaps';
@@ -10,8 +9,13 @@ import postcss from 'gulp-postcss';
 import imagemin from 'gulp-imagemin';
 import cssnano from 'cssnano';
 import webp from 'gulp-webp';
+import avif from 'gulp-avif';
+import svgSprite from 'gulp-svg-sprite';
+import svgmin from 'gulp-svgmin';
+import ttf2woff2 from 'gulp-ttf2woff2';
 import autoprefixer from 'autoprefixer';
 import terser from 'gulp-terser';
+import newer from 'gulp-newer';
 import { deleteAsync } from 'del';
 import browserSync from 'browser-sync';
 const scss = gulpSass(sass);
@@ -20,11 +24,12 @@ const jsFiles = [
 	'node_modules/jquery/dist/jquery.js',
 	'node_modules/slick-carousel/slick/slick.js',
 	'src/js/testimonials.js',
+	'src/js/mobileMenu.js',
 	'src/js/main.js',
 ];
 
 // HTML
-export const html = () => {
+export const html = async () => {
 	return gulp
 		.src('src/*.html')
 		.pipe(htmlmin({ removeComments: true, collapseWhitespace: true }))
@@ -33,7 +38,7 @@ export const html = () => {
 };
 
 // Styles
-export const styles = () => {
+export const styles = async () => {
 	return gulp
 		.src('src/scss/main.scss')
 		.pipe(scss())
@@ -50,12 +55,12 @@ export const styles = () => {
 			]),
 		)
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('src/css'))
+		.pipe(gulp.dest('dist/css'))
 		.pipe(browserSync.stream());
 };
 
 // Scripts
-export const scripts = () => {
+export const scripts = async () => {
 	return gulp
 		.src(jsFiles)
 		.pipe(
@@ -67,28 +72,36 @@ export const scripts = () => {
 		.pipe(concat('main.min.js'))
 		.pipe(terser())
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('src/js'))
+		.pipe(gulp.dest('dist/js'))
 		.pipe(browserSync.stream());
 };
 
 // Images
 export const images = () => {
 	return gulp
-		.src('src/img/**/*')
+		.src('src/img/**/*.{jpg,png}')
+		.pipe(newer('dist/img'))
+		.pipe(
+			avif({
+				quality: 70,
+			}),
+		)
+		.pipe(gulp.src('src/img/**/*.{jpg,png}'))
+		.pipe(newer('dist/img'))
 		.pipe(
 			webp({
 				quality: 70,
 			}),
 		)
+		.pipe(gulp.src('src/img/**/*.*'))
+		.pipe(newer('dist/img'))
 		.pipe(
-			cache(
-				imagemin({
-					progressive: true,
-					svgoPlugins: [{ removeViewBox: false }],
-					interlaced: true,
-					optimizationLevel: 3,
-				}),
-			),
+			imagemin({
+				progressive: true,
+				svgoPlugins: [{ removeViewBox: false }],
+				interlaced: true,
+				optimizationLevel: 3,
+			}),
 		)
 		.pipe(gulp.dest('dist/img'))
 		.pipe(
@@ -98,15 +111,42 @@ export const images = () => {
 		);
 };
 
-// Server
-export const browserReload = () => {
-	browserSync.init({
-		ui: false,
-		notify: false,
-		server: {
-			baseDir: 'src/',
-		},
-	});
+// SVG Icons
+export const svg = async () => {
+	return gulp
+		.src('src/icons/*.svg')
+		.pipe(
+			svgmin({
+				js2svg: {
+					pretty: true,
+				},
+			}),
+		)
+		.pipe(
+			svgSprite({
+				mode: {
+					symbol: {
+						sprite: '../sprite.svg',
+					},
+				},
+			}),
+		)
+		.pipe(gulp.dest('dist/icons'));
+};
+
+// Fonts
+export const fonts = async () => {
+	gulp
+		.src(['src/fonts/**.ttf'], {
+			base: 'src',
+		})
+		.pipe(ttf2woff2())
+		.pipe(gulp.dest('dist'));
+};
+
+// Resources
+export const resources = async () => {
+	return gulp.src('src/ajax/**').pipe(gulp.dest('dist/ajax'));
 };
 
 // Delete all files in dist
@@ -116,37 +156,24 @@ export const cleanDist = () => {
 
 // Watching all files
 export const watch = () => {
-	gulp.watch('src/*.html', gulp.series(html));
-	gulp.watch(['src/ajax/mail.php']).on('change', browserSync.reload);
-	gulp.watch('src/scss/main.scss', gulp.series(styles));
-	gulp.watch('src/img/**/*', gulp.series(images));
-	gulp.watch(
-		['src/js/**/*.js', '!src/js/main.min.js', '!src/js/main.min.js.map'],
-		gulp.series(scripts),
-	);
+	browserSync.init({
+		ui: false,
+		notify: false,
+		server: {
+			baseDir: 'dist',
+		},
+	});
+	gulp.watch('src/*.html', html);
+	gulp.watch('src/ajax/**', resources);
+	gulp.watch('src/scss/main.scss', styles);
+	gulp.watch('src/img/**/*', images);
+	gulp.watch('src/fonts/*', fonts);
+	gulp.watch('src/icons/*.svg', svg);
+	gulp.watch('src/js/**/*.js', scripts);
 };
 
-// Build dist folder
-export const build = () => {
-	return gulp
-		.src(
-			[
-				'src/css/main.min.css',
-				'src/css/main.min.css.map',
-				'src/fonts/**/*',
-				'src/js/main.min.js',
-				'src/js/main.min.js.map',
-				'src/ajax/mail.php',
-			],
-			{ base: 'src' },
-		)
-		.pipe(gulp.dest('dist'));
-};
-
-// exports.dev = gulp.parallel(scripts, styles, browserReload, dev);
-// exports.build = gulp.series(cleanDist, gulp.parallel(html, images, build));
 export default gulp.series(
 	cleanDist,
-	gulp.parallel(html, styles, scripts, images),
-	gulp.parallel(watch, browserReload),
+	gulp.parallel(html, styles, scripts, images, svg, fonts, resources),
+	gulp.parallel(watch),
 );

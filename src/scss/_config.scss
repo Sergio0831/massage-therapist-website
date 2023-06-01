@@ -21,7 +21,7 @@ body {
 	font-size: 3rem;
 	font-family: $montserrat;
 	text-align: center;
-	font-weight: 500;
+	font-weight: $medium-font-weight;
 }
 
 .underline {
@@ -33,9 +33,10 @@ body {
 
 a {
 	display: inline-block;
+	text-decoration: none;
 }
 
-a:hover {
+a:focus-visible {
 	text-decoration: none;
 }
 

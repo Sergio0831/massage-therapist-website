@@ -19,14 +19,13 @@
 
 	.logo {
 		display: flex;
+		align-items: center;
 		text-decoration: none;
-		img {
+		&__icon {
 			width: 4rem;
 			height: 4rem;
-			align-self: center;
 		}
 		&-text {
-			align-self: center;
 			font-family: $pacifico;
 			@include adaptiv-font(30, 20);
 			color: $primary-color;
@@ -187,7 +186,7 @@
 	-o-transform: translateY(0);
 }
 
-#home {
+.home {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url('../img/massage-bg.jpg');
 	min-height: 80vh;
@@ -226,7 +225,7 @@
 }
 
 // Section Services
-#services {
+.services {
 	padding: 5rem 10rem;
 	.container {
 		.services-slider {
@@ -251,7 +250,7 @@
 				margin-bottom: 2rem;
 				font-size: 2rem;
 				font-family: $montserrat;
-				font-weight: $heading-font-weight;
+				font-weight: $medium-font-weight;
 			}
 			&-img {
 				width: 100%;
@@ -265,7 +264,7 @@
 				@include adaptiv-font(16, 12);
 				line-height: 2.1rem;
 				font-family: $open-sans;
-				font-weight: $text-font-weight;
+				font-weight: $light-font-weight;
 			}
 			&-btn {
 				text-decoration: none;
@@ -339,7 +338,7 @@
 			@include adaptiv-font(20, 18);
 			font-family: $montserrat;
 			color: $text-color;
-			font-weight: $heading-font-weight;
+			font-weight: $medium-font-weight;
 		}
 
 		.packed {
@@ -349,7 +348,7 @@
 				font-family: $open-sans;
 				line-height: 2.7rem;
 				color: $text-color;
-				font-weight: $heading-font-weight;
+				font-weight: $medium-font-weight;
 			}
 
 			p {
@@ -357,7 +356,7 @@
 				font-family: $open-sans;
 				line-height: 2.7rem;
 				color: $text-color;
-				font-weight: $text-font-weight;
+				font-weight: $light-font-weight;
 			}
 		}
 	}
@@ -377,7 +376,7 @@
 			font-family: $open-sans;
 			line-height: 2.7rem;
 			color: $text-color;
-			font-weight: $text-font-weight;
+			font-weight: $light-font-weight;
 		}
 	}
 
@@ -420,7 +419,7 @@
 		@include adaptiv-font(20, 18);
 		font-family: $montserrat;
 		color: $text-color;
-		font-weight: $heading-font-weight;
+		font-weight: $medium-font-weight;
 	}
 
 	.testimonial {
@@ -439,7 +438,7 @@
 			font-family: $open-sans;
 			line-height: 1.7em;
 			color: $text-color;
-			font-weight: $heading-font-weight;
+			font-weight: $medium-font-weight;
 		}
 
 		p {
@@ -448,7 +447,7 @@
 			font-family: $open-sans;
 			line-height: 2.7rem;
 			color: $text-color;
-			font-weight: $text-font-weight;
+			font-weight: $light-font-weight;
 		}
 
 		.button-container {
@@ -617,14 +616,14 @@
 			color: #fff;
 			@include adaptiv-font(18, 14);
 			font-family: $montserrat;
-			font-weight: $text-font-weight;
+			font-weight: $light-font-weight;
 		}
 		p {
 			margin: 0;
 			color: #fff;
 			@include adaptiv-font(14, 12);
 			font-family: $open-sans;
-			font-weight: $text-font-weight;
+			font-weight: $light-font-weight;
 		}
 	}
 
@@ -649,7 +648,7 @@ footer {
 		text-align: center;
 		@include adaptiv-font(18, 16);
 		font-family: $open-sans;
-		font-weight: $text-font-weight;
+		font-weight: $light-font-weight;
 
 		a {
 			@include adaptiv-font(18, 15);
@@ -660,7 +659,7 @@ footer {
 }
 
 // Scroll Top Button
-#topBtn {
+.top-btn {
 	position: fixed;
 	bottom: 2rem;
 	right: 2rem;
