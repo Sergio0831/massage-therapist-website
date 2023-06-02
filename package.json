@@ -4,17 +4,14 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "gulp dev",
-		"build": "gulp build",
-		"start": "gulp",
-		"clean": "gulp cleanDist"
+		"start": "gulp"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Sergio0831/Massage_Therapist_Website.git"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Sergejs Ivcenko",
 	"type": "module",
 	"license": "ISC",
 	"bugs": {

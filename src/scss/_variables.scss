@@ -15,6 +15,7 @@ $light-font-weight: 300;
 // Colors
 $primary-color: #ed1e79;
 $text-color: #404041;
+$gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
 // Animation & Effects
 $button-hover: darken($primary-color, 10%);

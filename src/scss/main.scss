@@ -21,7 +21,7 @@
 		display: flex;
 		align-items: center;
 		text-decoration: none;
-		&__icon {
+		img {
 			width: 4rem;
 			height: 4rem;
 		}
@@ -41,9 +41,10 @@
 		.contact {
 			display: flex;
 
-			.fas {
-				@include adaptiv-font(25, 12);
-				color: $primary-color;
+			svg {
+				width: 2.5rem;
+				height: 2.5rem;
+				fill: $primary-color;
 				align-self: center;
 			}
 
@@ -96,10 +97,6 @@
 			.btn-line {
 				&:nth-child(1) {
 					transform: rotate(45deg) translate(6px, 6px);
-					-webkit-transform: rotate(45deg) translate(6px, 6px);
-					-moz-transform: rotate(45deg) translate(6px, 6px);
-					-ms-transform: rotate(45deg) translate(6px, 6px);
-					-o-transform: rotate(45deg) translate(6px, 6px);
 				}
 
 				&:nth-child(2) {
@@ -108,10 +105,6 @@
 
 				&:nth-child(3) {
 					transform: rotate(-45deg) translate(5px, -6px);
-					-webkit-transform: rotate(-45deg) translate(5px, -6px);
-					-moz-transform: rotate(-45deg) translate(5px, -6px);
-					-ms-transform: rotate(-45deg) translate(5px, -6px);
-					-o-transform: rotate(-45deg) translate(5px, -6px);
 				}
 			}
 		}
@@ -132,10 +125,6 @@
 	font-family: $montserrat;
 	background-color: lighten($primary-color, 45%);
 	transform: translateY(-150%);
-	-webkit-transform: translateY(-150%);
-	-moz-transform: translateY(-150%);
-	-ms-transform: translateY(-150%);
-	-o-transform: translateY(-150%);
 	@include easeOut;
 
 	.contact {
@@ -165,10 +154,6 @@
 					background: $primary-color;
 					@include easeOut;
 					transform: translateY(-1rem);
-					-webkit-transform: translateY(-1rem);
-					-moz-transform: translateY(-1rem);
-					-ms-transform: translateY(-1rem);
-					-o-transform: translateY(-1rem);
 				}
 			}
 			.active::after {
@@ -180,21 +165,30 @@
 
 .active-menu {
 	transform: translateY(0);
-	-webkit-transform: translateY(0);
-	-moz-transform: translateY(0);
-	-ms-transform: translateY(0);
-	-o-transform: translateY(0);
 }
 
 .home {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url('../img/massage-bg.jpg');
+	background-image: $gradient, url('../img/massage-bg.webp');
 	min-height: 80vh;
 	max-width: 100%;
 	background-position: center;
 	background-size: cover;
 	display: grid;
 	align-items: center;
+
+	@include mediaSm {
+		background-image: $gradient, url('../img/massage-bg-mobile.webp');
+		background-position: 20%;
+	}
+
+	@include mediaMd {
+		background-image: $gradient, url('../img/massage-bg-tablet.webp');
+		background-position: 20%;
+	}
+
+	@include mediaLg {
+		background-image: $gradient, url('../img/massage-bg-laptop.webp');
+	}
 
 	.home-text {
 		text-align: center;
@@ -312,20 +306,33 @@
 .prices {
 	padding: 5rem 0;
 	width: 100%;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url('../img/prices-bg/prices1-bg.jpg');
-	// height: 100%;
-	width: 100%;
+	background-image: $gradient, url('../img/prices-bg/prices-bg.webp');
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
+
+	@include mediaSm {
+		background-image: $gradient, url('../img/prices-bg/prices-bg-mobile.webp');
+		background-position: 20%;
+	}
+
+	@include mediaMd {
+		background-image: $gradient, url('../img/prices-bg/prices-bg-tablet.webp');
+		background-position: 20%;
+	}
+
+	@include mediaLg {
+		background-image: $gradient, url('../img/prices-bg/prices-bg-laptop.webp');
+	}
 
 	&-card {
 		margin: 0 auto;
 		padding: 5rem 0;
 		width: 50%;
 		height: 100%;
-		background-image: url(../img/beauty.svg);
+
+		@include bg-image-set('../img/beauty.webp', url('../img/beauty.avif') 1x);
+
 		background-repeat: no-repeat;
 		background-size: 20rem;
 		background-position: bottom 2rem right 2rem;
@@ -448,31 +455,33 @@
 			line-height: 2.7rem;
 			color: $text-color;
 			font-weight: $light-font-weight;
+			height: auto;
 		}
 
 		.button-container {
 			.prev-btn,
 			.next-btn {
-				margin: 0.7rem 0.5rem;
-				font-size: 2rem;
-				color: $primary-color;
+				margin: 0.5rem;
+				width: 3.5rem;
+				height: 3.5rem;
 				background: transparent;
 				border-color: transparent;
+				border-radius: 5px;
 				cursor: pointer;
 				border: none;
+
 				@include easeOut;
+				padding: 5px;
 
 				&:hover {
-					transform: scale(1.5);
-					-webkit-transform: scale(1.5);
-					-moz-transform: scale(1.5);
-					-ms-transform: scale(1.5);
-					-o-transform: scale(1.5);
+					background-color: lighten($primary-color, 40%);
 				}
 			}
 
-			.fas {
-				font-size: 2rem;
+			svg {
+				fill: $primary-color;
+				width: 100%;
+				height: 100%;
 			}
 		}
 	}
@@ -507,7 +516,7 @@
 			height: 30px;
 			background: $primary-color;
 			color: #fff;
-			place-items: center;
+			align-items: center;
 			@include round-radius;
 		}
 
@@ -560,6 +569,10 @@
 							transform: translateY(-2.2rem) scale(0.8);
 						}
 					}
+
+					&:focus-visible {
+						outline: none;
+					}
 				}
 
 				span {
@@ -607,10 +620,6 @@
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
 		border-radius: 5px;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		-ms-border-radius: 5px;
-		-o-border-radius: 5px;
 		display: none;
 		h3 {
 			color: #fff;
@@ -663,18 +672,22 @@ footer {
 	position: fixed;
 	bottom: 2rem;
 	right: 2rem;
+	padding: 8px;
 	cursor: pointer;
+	opacity: 0;
 	width: 5rem;
 	height: 5rem;
 	background: $primary-color;
 	color: #fff;
 	border: none;
 	outline: none;
-	// display: none;
-	opacity: 0.8;
+	// opacity: 0.8;
 	@include border-radius;
-	.fas {
-		font-size: 2rem;
+
+	svg {
+		fill: #fff;
+		width: 100%;
+		height: 100%;
 	}
 }
 

@@ -25,6 +25,7 @@ const jsFiles = [
 	'node_modules/slick-carousel/slick/slick.js',
 	'src/js/testimonials.js',
 	'src/js/mobileMenu.js',
+	'src/js/scroll.js',
 	'src/js/main.js',
 ];
 
