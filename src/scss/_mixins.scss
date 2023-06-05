@@ -1,4 +1,14 @@
-@import '_variables.scss';
+// Font face
+/* stylelint-disable */
+@mixin font-face($font-family, $url, $weight, $style) {
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('../fonts/#{$url}.woff2') format('woff2');
+		font-weight: #{$weight};
+		font-display: swap;
+		font-style: $style;
+	}
+}
 
 // Responsive Font
 @mixin adaptiv-font($pcSize, $mobSize) {
@@ -43,10 +53,22 @@
 }
 
 // Image set
-@mixin bg-image-set($fallback, $imageSet...) {
-	background-image: url($fallback);
-	@if $imageSet {
-		background-image: -webkit-image-set(#{$imageSet});
-		background-image: image-set(#{$imageSet});
+@mixin image-set($pathToImage) {
+	background-image: url('#{$pathToImage}.jpg');
+	/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+	background-image: image-set(
+		/* stylelint-disable-next-line function-comma-newline-after */
+			'#{$pathToImage}.avif' type('image/avif'),
+		'#{$pathToImage}.webp' type('image/webp'),
+		'#{$pathToImage}.jpg' type('image/jpg')
+	);
+}
+
+// Not hover on touch screens
+@mixin hover {
+	@media (any-hover: hover) {
+		&:hover {
+			@content;
+		}
 	}
 }

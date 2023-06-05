@@ -1,47 +1,21 @@
-@font-face {
-	font-family: 'Montserrat';
-	src: url('../fonts/Montserrat-Bold.woff2') format('woff2');
-	font-weight: 700;
-	font-display: swap;
-	font-style: normal;
-}
+@include font-face('Montserrat', '../fonts/Montserrat-Bold.woff2', 700, normal);
 
-@font-face {
-	font-family: 'Montserrat';
-	src: url('../fonts/Montserrat-Medium.woff2') format('woff2');
-	font-weight: 500;
-	font-display: swap;
-	font-style: normal;
-}
+@include font-face(
+	'Montserrat',
+	'../fonts/Montserrat-Medium.woff2',
+	500,
+	normal
+);
 
-@font-face {
-	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-Light.woff2') format('woff2');
-	font-weight: 300;
-	font-display: swap;
-	font-style: normal;
-}
+@include font-face('Open Sans', '../fonts/OpenSans-Light.woff2', 300, normal);
 
-@font-face {
-	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
-	font-weight: 400;
-	font-display: swap;
-	font-style: normal;
-}
+@include font-face('Open Sans', '../fonts/OpenSans-Regular.woff2', 400, normal);
 
-@font-face {
-	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2');
-	font-weight: 600;
-	font-display: swap;
-	font-style: normal;
-}
+@include font-face(
+	'Open Sans',
+	'../fonts/OpenSans-SemiBold.woff2',
+	600,
+	normal
+);
 
-@font-face {
-	font-family: 'Pacifico';
-	src: url('../fonts/Pacifico-Regular.woff2') format('woff2');
-	font-weight: 400;
-	font-display: swap;
-	font-style: normal;
-}
+@include font-face('Pacifico', '../fonts/Pacifico-Regular.woff2', 400, normal);

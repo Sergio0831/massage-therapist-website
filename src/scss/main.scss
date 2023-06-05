@@ -1,8 +1,10 @@
-@import '_config.scss';
-@import '_mixins.scss';
-@import '_variables.scss';
-@import '../../node_modules/slick-carousel/slick/slick.scss';
-@import '../../node_modules/slick-carousel/slick/slick-theme.scss';
+// Base imports
+@import './config';
+@import './mixins';
+@import './variables';
+@import './responsive';
+
+// Page components
 
 .menu {
 	display: flex;
@@ -221,66 +223,62 @@
 // Section Services
 .services {
 	padding: 5rem 10rem;
-	.container {
-		.services-slider {
-			margin-top: 3rem;
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 2rem;
-			box-shadow: none;
-		}
+}
 
-		.article {
-			padding: 2rem;
-			text-align: center;
-			border: 1px solid $primary-color;
-			background-color: #fff;
-			@include border-radius;
-			@include easeOut;
-			&:hover {
-				box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-			}
-			&-heading {
-				margin-bottom: 2rem;
-				font-size: 2rem;
-				font-family: $montserrat;
-				font-weight: $medium-font-weight;
-			}
-			&-img {
-				width: 100%;
-				object-fit: cover;
-				@include border-radius;
-			}
-			&-text {
-				min-height: 18rem;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				@include adaptiv-font(16, 12);
-				line-height: 2.1rem;
-				font-family: $open-sans;
-				font-weight: $light-font-weight;
-			}
-			&-btn {
-				text-decoration: none;
-				@include adaptiv-font(15, 13);
-				font-family: $open-sans;
-				color: #fff;
-				background-color: $primary-color;
-				padding: 1rem 2rem;
-				@include border-radius;
-				@include easeOut;
+.services-slider__container {
+	margin-top: 3rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	box-shadow: none;
+}
 
-				&:hover {
-					background-color: $button-hover;
-				}
-			}
+.article {
+	padding: 2rem;
+	text-align: center;
+	border: 1px solid $primary-color;
+	background-color: #fff;
+	@include border-radius;
+	@include easeOut;
+	&:hover {
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	}
+	&-heading {
+		margin-bottom: 2rem;
+		font-size: 2rem;
+		font-family: $montserrat;
+		font-weight: $medium-font-weight;
+	}
+	&-img {
+		width: 100%;
+		object-fit: cover;
+		@include border-radius;
+	}
+	&-text {
+		min-height: 18rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		@include adaptiv-font(16, 12);
+		line-height: 2.1rem;
+		font-family: $open-sans;
+		font-weight: $light-font-weight;
+	}
+	&-btn {
+		text-decoration: none;
+		@include adaptiv-font(15, 13);
+		font-family: $open-sans;
+		color: #fff;
+		background-color: $primary-color;
+		padding: 1rem 2rem;
+		@include border-radius;
+		@include easeOut;
+
+		&:hover {
+			background-color: $button-hover;
 		}
 	}
 }
 
-.slick-active {
-	outline: none;
-}
 .arrow {
 	top: 50%;
 	transform: translateY(-50%);
@@ -331,7 +329,7 @@
 		width: 50%;
 		height: 100%;
 
-		@include bg-image-set('../img/beauty.webp', url('../img/beauty.avif') 1x);
+		@include image-set('../img/beauty');
 
 		background-repeat: no-repeat;
 		background-size: 20rem;

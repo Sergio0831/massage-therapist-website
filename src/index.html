@@ -10,7 +10,20 @@
   <meta name="author" content="Sergejs Ivcenko" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Ķermeņa Masāža Riga</title>
+  <!-- Preload fonts -->
+  <link rel="preload" href="fonts/Montserrat-Bold.ttf" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Medium.ttf" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/OpenSans-Light.ttf" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/OpenSans-Regular.ttf" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/OpenSans-SemiBold.ttf" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Pacifico-Regular.ttf" as="font" type="font/woff2" crossorigin>
+  <!-- Links -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/vendor.css" />
+  <!-- Script -->
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -51,10 +64,12 @@
       <a href="index.html" class="lang-active">LV</a>
       <a href="ru.html">RU</a>
     </div>
-    <div class="menu-btn" role='button' tabindex='0'>
+    <div class="menu-btn" role="button" tabindex="0">
       <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
+      <div class="btn-line">
+      </div>
+      <div class="btn-line">
+      </div>
     </div>
   </nav>
   <div class="nav-menu">
@@ -68,22 +83,26 @@
     </ul>
   </div>
   <!-- Home -->
-  <section id="home" class='home'>
+  <section id="home" class="home">
     <div class="home-text">
       <h1>Jūsu ķermeņa veselība ir drošās rokās</h1>
       <a href="#about" class="home-button">Lāsit Vairāk</a>
     </div>
   </section>
   <!-- Services -->
-  <section id="services" class='services'>
+  <section id="services" class="services">
     <div class="container">
       <h2 class="heading">Pakalpojumi</h2>
       <div class="underline"></div>
-      <div class="prev-arrow"></div>
-      <div class="slider-container">
-        <div class="services-slider">
+      <button class="prev-arrow" aria-label="Prev Slide">
+        <svg class="feature__icon">
+          <use xlink:href="icons/sprite.svg#chevron-left"></use>
+        </svg>
+      </button>
+      <div class="services-slider swiper">
+        <div class="swiper-container services-slider__container">
           <!--1-->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Klasiskā Masāža</h3>
             <picture>
               <source srcset="img/massage-type/classic.webp" type="img/webp" />
@@ -99,7 +118,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 2 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Sprandas Masāža</h3>
             <picture>
               <source srcset="img/massage-type/neck.webp" type="img/webp" />
@@ -114,7 +133,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 3 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Sporta Masāža</h3>
             <picture>
               <source srcset="img/massage-type/sport.webp" type="img/webp" />
@@ -129,7 +148,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 4 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Relaksējoša Masāža</h3>
             <picture>
               <source srcset="img/massage-type/relax.webp" type="img/webp" />
@@ -145,7 +164,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 5 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Anticelulīta Masāža</h3>
             <picture>
               <source srcset="img/massage-type/anticellyulitnyj.webp" type="img/webp" />
@@ -161,7 +180,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 6 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Pēdu Masāža</h3>
             <picture>
               <source srcset="img/massage-type/foot.webp" type="img/webp" />
@@ -176,7 +195,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 7 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Medus Masāža</h3>
             <picture>
               <source srcset="img/massage-type/classic.webp" type="img/webp" />
@@ -191,7 +210,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 8 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Šokolādes Masāža</h3>
             <picture>
               <source srcset="img/massage-type/chocolatec.webp" type="img/webp" />
@@ -207,7 +226,7 @@
             <a href="#prices" class="article-btn">Cenas</a>
           </div>
           <!-- 9 -->
-          <div class="article">
+          <div class="article swiper-slide">
             <h3 class="article-heading">Karsto Akmeņu Masāža</h3>
             <picture>
               <source srcset="img/massage-type/classic.webp" type="img/webp" />
@@ -218,7 +237,9 @@
           </div>
         </div>
       </div>
-      <div class="next-arrow"></div>
+      <button class="next-arrow" aria-label="Next Slide"><svg class="feature__icon">
+          <use xlink:href="icons/sprite.svg#chevron-right"></use>
+        </svg></button>
     </div>
   </section>
   <!-- Prices -->
@@ -265,7 +286,7 @@
           <source srcset="img/about.webp" type="image/webp">
           <!-- load in case no `source` format applies 
                       and use attributes for presentation -->
-          <img src="img/about.jpg" loading='lazy' alt="Oksana Tazova" />
+          <img src="img/about.jpg" loading="lazy" alt="Oksana Tazova" />
         </picture>
       </div>
       <p>
@@ -291,10 +312,10 @@
       <h4 id="firstName"></h4>
       <p id="review"></p>
       <div class="button-container">
-        <button class="prev-btn" aria-label='Next testimonial'><svg class="feature__icon">
+        <button class="prev-btn" aria-label="Next testimonial"><svg class="feature__icon">
             <use xlink:href="icons/sprite.svg#chevron-left"></use>
           </svg></button>
-        <button class="next-btn" aria-label='Prev testimonial'><svg class="feature__icon">
+        <button class="next-btn" aria-label="Prev testimonial"><svg class="feature__icon">
             <use xlink:href="icons/sprite.svg#chevron-right"></use>
           </svg></button>
       </div>
@@ -305,21 +326,21 @@
     <div class="contacts-info">
       <h2 class="heading">Sazinies</h2>
       <div class="underline"></div>
-      <div class="form-message"></div>
+      <div class="form-message">
+      </div>
       <form action="ajax/mail.php" id="form" method="POST">
-        <label class="form-group" for='name'>
+        <label class="form-group" for="name">
           <input id="name" type="text" class="form-control" name="name" required />
           <span>Vārds</span>
         </label>
-        <label class="form-group" for='email'>
+        <label class="form-group" for="email">
           <input id="email" type="email" class="form-control" name="email" required />
           <span>E-Pasts</span>
         </label>
-        <label class="form-group" for='phone'>
-          <input id="phone" type="tel" class="form-control" name="phone" required />
-          <span>Telefons</span>
+        <label class="form-group" for="phone">
+          <input id="phone" type="tel" class="form-control" name="phone" required /> <span>Telefons</span>
         </label>
-        <label class="form-group" for='message'>
+        <label class="form-group" for="message">
           <textarea id="message" name="message" class="form-control" rows="10" required></textarea>
           <span>Ziņa</span>
         </label>
@@ -343,14 +364,10 @@
       </p>
     </div>
   </footer>
-  <button id="topBtn" class='top-btn' aria-label='Scroll to top'><svg class="feature__icon">
+  <button id="topBtn" class="top-btn" aria-label="Scroll to top"><svg class="feature__icon">
       <use xlink:href="icons/sprite.svg#arrow-up"></use>
     </svg></button>
-  <!-- Links -->
-  <link rel="stylesheet" href="css/main.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
-  <!-- Script -->
-  <script src="js/main.min.js"></script>
+
 </body>
 
 </html>
