@@ -57,6 +57,7 @@ navLinks.forEach((link) =>
 		navLinks.forEach((link) => {
 			link.classList.remove('active');
 		});
+		console.log(link);
 
 		scrollToElement(e, link, 20);
 		navMenu.classList.remove('active-menu');

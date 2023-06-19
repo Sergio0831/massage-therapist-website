@@ -1,9 +1,7 @@
 import gulp from 'gulp';
-import babel from 'gulp-babel';
 import htmlmin from 'gulp-htmlmin';
 import gulpSass from 'gulp-sass';
 import sass from 'sass';
-import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
 import cssnano from 'cssnano';
 import image from 'gulp-imagemin';
@@ -11,11 +9,8 @@ import webp from 'gulp-webp';
 import avif from 'gulp-avif';
 import svgSprite from 'gulp-svg-sprite';
 import svgmin from 'gulp-svgmin';
-import ttf2woff2 from 'gulp-ttf2woff2';
 import autoprefixer from 'autoprefixer';
 import typograf from 'gulp-typograf';
-import terser from 'gulp-terser';
-import newer from 'gulp-newer';
 import { deleteAsync } from 'del';
 import { readFileSync } from 'fs';
 import browserSync from 'browser-sync';
@@ -169,7 +164,7 @@ export const scripts = () => {
 
 // Images
 export const images = () => {
-	return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png, svg}`])
+	return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`])
 		.pipe(gulpIf(isProd, image()))
 		.pipe(dest(paths.buildImgFolder));
 };
@@ -247,7 +242,7 @@ export const watchFiles = () => {
 	watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`, images);
 	watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
 	watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, avifImages);
-	watch(paths.srcSvg, svgSprites);
+	watch(paths.srcSvg, svg);
 };
 
 // Cache

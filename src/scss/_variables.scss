@@ -11,12 +11,34 @@ $regular-font-weight: 400;
 $light-font-weight: 300;
 
 // Colors
+//$primary-color: #ed1e79;
 $primary-color: #ed1e79;
+$primary-color-lighten: lighten($primary-color, 45%);
+$primary-color-darken: darken($primary-color, 10%);
 $text-color: #404041;
+$white-color: #fff;
 $gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
 // Animation & Effects
-$button-hover: darken($primary-color, 10%);
+$button-hover: $primary-color-darken;
 
 // Max Width
 $maxWidth: 1440;
+
+// Display
+$d-flex: flex;
+$d-grid: grid;
+$d-block: block;
+$d-inline-block: inline-block;
+
+// Position
+$p-relative: relative;
+$p-absolute: absolute;
+$p-fixed: fixed;
+
+// Text align
+$align-center: center;
+$align-left: left;
+
+// Margin
+$margin-auto: auto;

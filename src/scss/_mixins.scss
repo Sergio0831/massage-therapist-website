@@ -64,6 +64,23 @@
 	);
 }
 
+// Dark overlay
+@mixin overlay {
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: $gradient;
+	}
+}
+
+// Background cover
+@mixin bg-cover {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 // Not hover on touch screens
 @mixin hover {
 	@media (any-hover: hover) {

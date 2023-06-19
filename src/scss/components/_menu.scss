@@ -1,0 +1,159 @@
+.menu {
+	display: $d-flex;
+	padding: 0 5rem;
+	height: 6rem;
+	position: $p-fixed;
+	inset: 0;
+	z-index: 3;
+	background-color: $primary-color-lighten;
+	align-items: $align-center;
+	justify-content: space-between;
+
+	&__logo {
+		display: inherit;
+		align-items: $align-center;
+		column-gap: 5px;
+
+		img {
+			width: 3rem;
+			height: 3rem;
+		}
+
+		&-text {
+			font-family: $pacifico;
+			@include adaptiv-font(30, 20);
+			color: $primary-color;
+		}
+	}
+
+	.contact-info {
+		display: inherit;
+		//margin-top: 0.5rem;
+		//justify-content: space-between;
+	}
+
+	.contact {
+		display: flex;
+
+		&__icon {
+			width: 2.5rem;
+			height: 2.5rem;
+			fill: $primary-color;
+			align-self: center;
+		}
+
+		p {
+			@include adaptiv-font(15, 12);
+			padding-left: 1rem;
+			align-self: center;
+			font-family: $open-sans;
+			font-weight: 600;
+		}
+
+		a {
+			@include adaptiv-font(15, 12);
+			padding-left: 1rem;
+			margin-top: 0.2rem;
+			font-family: $open-sans;
+			font-weight: 600;
+			text-decoration: none;
+			color: #000;
+		}
+	}
+
+	.lang {
+		margin-top: 0.5rem;
+		a {
+			@include adaptiv-font(15, 12);
+			padding: 0.5rem;
+			font-family: $open-sans;
+			font-weight: 600;
+			text-decoration: none;
+			color: $primary-color;
+		}
+	}
+
+	&-btn {
+		margin-top: 1rem;
+		cursor: pointer;
+
+		.btn-line {
+			width: 28px;
+			height: 3px;
+			margin: 0 0 5px 0;
+			background: #000;
+			@include easeOut;
+			@include border-radius;
+		}
+
+		&.close {
+			.btn-line {
+				&:nth-child(1) {
+					transform: rotate(45deg) translate(6px, 6px);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg) translate(5px, -6px);
+				}
+			}
+		}
+	}
+
+	@include mediaSm {
+		padding: 0 2rem;
+		.logo {
+			img {
+				width: 4rem;
+				height: 4rem;
+			}
+			&-text {
+				display: none;
+			}
+		}
+		.contact-info {
+			width: auto;
+			.contact:nth-child(1) {
+				display: none;
+			}
+			.contact:nth-child(2) {
+				a {
+					padding-left: 0.5rem;
+				}
+			}
+			.contact:nth-child(3) {
+				display: none;
+			}
+		}
+	}
+
+	@include mediaMd {
+		padding: 0 1rem;
+		.logo {
+			img {
+				width: 4rem;
+				height: 4rem;
+			}
+		}
+		.contact-info {
+			width: auto;
+			.contact:nth-child(1) {
+				display: none;
+			}
+			.contact:nth-child(3) {
+				display: none;
+			}
+		}
+	}
+
+	@include mediaLg {
+		padding: 0 2rem;
+
+		.contact-info {
+			width: 57%;
+		}
+	}
+}

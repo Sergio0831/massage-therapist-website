@@ -1,0 +1,106 @@
+.testimonials {
+	padding: 5rem 0;
+
+	h3 {
+		margin: 0 0 2rem;
+		@include adaptiv-font(20, 18);
+		font-family: $montserrat;
+		font-weight: $medium-font-weight;
+	}
+
+	.testimonial {
+		width: 80%;
+		max-width: 80%;
+		margin: 0 auto;
+		background: #fff;
+		padding: 3rem 3rem;
+		box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+		@include border-radius;
+
+		h4 {
+			margin-top: 1rem;
+			@include adaptiv-font(18, 16);
+			font-family: $open-sans;
+			font-weight: $medium-font-weight;
+		}
+
+		p {
+			margin-bottom: 1rem;
+			@include adaptiv-font(18, 14);
+			font-family: $open-sans;
+			font-weight: $light-font-weight;
+			height: auto;
+			text-align: left;
+		}
+
+		.button-container {
+			.prev-btn,
+			.next-btn {
+				margin: 0.5rem;
+				width: 3.5rem;
+				height: 3.5rem;
+				background: transparent;
+				border-color: transparent;
+				border-radius: 5px;
+				cursor: pointer;
+				border: none;
+
+				@include easeOut;
+				padding: 5px;
+
+				&:hover {
+					background-color: $primary-color-lighten;
+				}
+			}
+
+			svg {
+				fill: $primary-color;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	.img-container {
+		position: relative;
+		height: 150px;
+		width: 150px;
+		margin: 0 auto;
+		@include round-radius;
+
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: $primary-color;
+			top: -5px;
+			right: -10px;
+			@include round-radius;
+		}
+
+		&:after {
+			display: grid;
+			content: '';
+			font-size: 2rem;
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			background-color: $primary-color;
+			color: #fff;
+			align-items: center;
+			@include round-radius;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: relative;
+			@include round-radius;
+		}
+	}
+}

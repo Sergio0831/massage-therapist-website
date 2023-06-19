@@ -1,0 +1,41 @@
+.home {
+	@include image-set('../img/massage-bg');
+	min-height: 80vh;
+	display: $d-flex;
+	position: $p-relative;
+
+	@include bg-cover;
+	@include overlay;
+
+	@include mediaSm {
+		@include image-set('../img/massage-bg-mobile');
+		background-position: 20%;
+	}
+
+	@include mediaMd {
+		@include image-set('../img/massage-bg-tablet');
+		background-position: 20%;
+	}
+
+	@include mediaLg {
+		@include image-set('../img/massage-bg-laptop');
+	}
+
+	.home-text {
+		text-align: $align-center;
+		margin: $margin-auto;
+		z-index: 1;
+	}
+
+	@include mediaSm {
+		min-height: 70vh;
+	}
+
+	@include mediaMd {
+		min-height: 70vh;
+	}
+
+	@include mediaLg {
+		min-height: 80vh;
+	}
+}

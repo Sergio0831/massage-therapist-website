@@ -1,0 +1,87 @@
+.prices {
+	padding: 5rem 0;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+
+	@include image-set('../img/prices-bg/prices-bg');
+	@include overlay;
+
+	@include mediaSm {
+		@include image-set('../img/prices-bg/prices-bg-mobile');
+		background-position: 20%;
+	}
+
+	@include mediaMd {
+		@include image-set('../img/prices-bg/prices-bg-tablet');
+		background-position: 20%;
+	}
+
+	@include mediaLg {
+		@include image-set('../img/prices-bg/prices-bg-laptop');
+	}
+
+	&-card {
+		margin: 0 auto;
+		padding: 5rem 0;
+		width: 50%;
+		height: 100%;
+		z-index: 1;
+		position: relative;
+
+		@include image-set('../img/beauty');
+
+		background-repeat: no-repeat;
+		background-size: 20rem;
+		background-position: bottom 2rem right 2rem;
+		background-color: $primary-color-lighten;
+		text-align: center;
+		@include border-radius;
+
+		h3 {
+			margin-top: 1rem;
+			@include adaptiv-font(20, 18);
+			font-family: $montserrat;
+			color: $text-color;
+			font-weight: $medium-font-weight;
+		}
+
+		.packed {
+			h4 {
+				margin-top: 1rem;
+				@include adaptiv-font(18, 16);
+				font-family: $open-sans;
+				line-height: 2.7rem;
+				color: $text-color;
+				font-weight: $medium-font-weight;
+			}
+
+			p {
+				@include adaptiv-font(18, 16);
+				font-family: $open-sans;
+				line-height: 2.7rem;
+				color: $text-color;
+				font-weight: $light-font-weight;
+			}
+		}
+
+		@include mediaSm {
+			width: 90%;
+			background-size: 10rem;
+			background-position: bottom 2rem right 1rem;
+		}
+
+		@include mediaMd {
+			width: 80%;
+			background-size: 12rem;
+			background-position: bottom 2rem right 1rem;
+		}
+
+		@include mediaLg {
+			width: 70%;
+			background-size: 20rem;
+		}
+	}
+}
