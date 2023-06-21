@@ -14,6 +14,33 @@ body {
 	color: $text-color;
 }
 
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+textarea {
+	resize: none;
+}
+
+h1 {
+	color: $white-color;
+	font-family: $montserrat;
+	@include adaptiv-font(50, 30);
+	line-height: 1.1;
+}
+
+h2,
+h3,
+h4 {
+	text-align: center;
+}
+
+p,
+a {
+	font-family: $open-sans;
+}
+
 .container {
 	max-width: 120rem;
 	width: 90%;
@@ -33,10 +60,9 @@ body {
 	background-color: $primary-color;
 }
 
-a {
-	display: inline-block;
-	text-decoration: none;
-	font-family: $open-sans;
+.lang-active {
+	background: #fff;
+	@include border-radius;
 }
 
 .btn {
@@ -52,43 +78,20 @@ a {
 	}
 }
 
-textarea {
-	resize: none;
-}
-
-h1 {
-	color: $white-color;
-	font-family: $montserrat;
-	@include adaptiv-font(50, 30);
-	margin: 0 0 3rem;
-}
-
-h2,
-h3,
-h4 {
-	text-align: center;
-}
-
-.lang-active {
-	background: #fff;
-	@include border-radius;
-}
-
-// Scroll Top Button
+/* Scroll Top Button */
 .top-btn {
 	position: fixed;
 	bottom: 2rem;
 	right: 2rem;
 	padding: 8px;
 	cursor: pointer;
-	opacity: 0;
-	width: 5rem;
-	height: 5rem;
+	width: 3rem;
+	height: 3rem;
 	background: $primary-color;
 	color: #fff;
 	border: none;
 	outline: none;
-	// opacity: 0.8;
+	opacity: 0.8;
 	@include border-radius;
 
 	svg {
@@ -96,4 +99,9 @@ h4 {
 		width: 100%;
 		height: 100%;
 	}
+}
+
+.dis-scroll {
+	overflow: hidden;
+	height: 100vh;
 }

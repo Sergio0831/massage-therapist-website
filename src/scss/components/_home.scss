@@ -7,35 +7,33 @@
 	@include bg-cover;
 	@include overlay;
 
-	@include mediaSm {
-		@include image-set('../img/massage-bg-mobile');
-		background-position: 20%;
+	&__text {
+		text-align: $align-center;
+		margin: $margin-auto;
+		z-index: 1;
 	}
 
-	@include mediaMd {
-		@include image-set('../img/massage-bg-tablet');
-		background-position: 20%;
+	h1 {
+		margin-bottom: 2rem;
 	}
 
 	@include mediaLg {
 		@include image-set('../img/massage-bg-laptop');
 	}
 
-	.home-text {
-		text-align: $align-center;
-		margin: $margin-auto;
-		z-index: 1;
+	@include mediaMd {
+		min-height: 70vh;
+		@include image-set('../img/massage-bg-tablet');
+		background-position: 20%;
+
+		h1 {
+			margin-bottom: 1rem;
+		}
 	}
 
 	@include mediaSm {
-		min-height: 70vh;
-	}
-
-	@include mediaMd {
-		min-height: 70vh;
-	}
-
-	@include mediaLg {
-		min-height: 80vh;
+		min-height: 60vh;
+		@include image-set('../img/massage-bg-mobile');
+		background-position: 20%;
 	}
 }

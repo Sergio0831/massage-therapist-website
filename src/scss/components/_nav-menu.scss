@@ -6,47 +6,36 @@
 	opacity: 0.9;
 	top: 6rem;
 	z-index: 2;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	text-align: center;
 	font-family: $montserrat;
 	background-color: $primary-color-lighten;
 	transform: translateY(-150%);
 	@include easeOut;
 
-	.contact {
-		display: none;
+	ul {
+		line-height: 2.5;
 	}
 
-	ul {
-		list-style: none;
-		line-height: 2.5;
+	a {
+		@include adaptiv-font(25, 20);
+		color: $primary-color;
 
-		li {
-			a {
-				display: inline-block;
-				@include adaptiv-font(25, 20);
-				color: $primary-color;
-				text-decoration: none;
-
-				&:hover::after {
-					width: 100%;
-				}
-
-				&::after {
-					content: '';
-					display: block;
-					width: 0%;
-					height: 2px;
-					background: $primary-color;
-					@include easeOut;
-					transform: translateY(-1rem);
-				}
-			}
-			.active::after {
-				width: 100%;
-			}
+		&:hover::after {
+			width: 100%;
 		}
+
+		&::after {
+			content: '';
+			display: block;
+			width: 0%;
+			height: 2px;
+			background: $primary-color;
+			@include easeOut;
+			transform: translateY(-1rem);
+		}
+	}
+	.active::after {
+		width: 100%;
 	}
 }
 

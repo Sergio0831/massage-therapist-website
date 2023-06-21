@@ -1,14 +1,23 @@
-const menuBtn = document.querySelector('.menu-btn');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = navMenu.querySelectorAll('a');
+import { disableScroll } from './disable-scroll.js';
+import { enableScroll } from './enable-scroll.js';
+
+export const menuBtn = document.querySelector('.menu__btn');
+export const navMenu = document.querySelector('.nav-menu');
 
 const toggleMenu = () => {
 	menuBtn.classList.toggle('close');
 	navMenu.classList.toggle('active-menu');
+	if (navMenu.classList.contains('active-menu')) {
+		disableScroll();
+	} else {
+		enableScroll();
+	}
 };
 
-const closeMenu = () => {
+export const closeMenu = () => {
+	menuBtn.classList.remove('close');
 	navMenu.classList.remove('active-menu');
+	enableScroll();
 };
 
 menuBtn.addEventListener('keydown', (e) => {

@@ -1,87 +1,17 @@
 <!DOCTYPE html>
 <html lang="lv-lv">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Ķermeņa Masāža | Ķermeņa Kopšanas Speciāliste" />
-  <meta name="robots" content="index, follow" />
-  <meta name="keywords"
-    content="Masāža, Ķermeņa Masāža, Ķermeņa Kopšana, Salons, Ķermeņa Masāža Riga, Ķermeņa Masāža Purvciema, Masāža Netālu, Masāža Blakus, Masāža SPA, Mugura Sāpēs, Sprandas Sāpēs, Medus Masāža, Šokolādes Masāža, Karsto Akmeņu Masāža, Pēdu Masāža, Anticelulīta Masāža, Relaksējoša Masāža, Sporta Masāža, Sprandas Masāža, Klasiskā Masāža" />
-  <meta name="author" content="Sergejs Ivcenko" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <title>Ķermeņa Masāža Riga</title>
-  <!-- Preload fonts -->
-  <link rel="preload" href="fonts/Montserrat-Bold.ttf" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/Montserrat-Medium.ttf" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/OpenSans-Light.ttf" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/OpenSans-Regular.ttf" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/OpenSans-SemiBold.ttf" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/Pacifico-Regular.ttf" as="font" type="font/woff2" crossorigin>
-  <!-- Links -->
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/vendor.css" />
-  <!-- Script -->
-  <script defer src="js/main.js"></script>
-</head>
+<!-- Head -->
+@include('partials/head.html')
 
 <body>
-  <nav class="menu">
-    <a class="menu__logo" href="#home">
-      <img src="img/logo.svg" alt="logo">
-      <span class="menu__logo-text">Oksana Tazova</span>
-    </a>
-    <div class="contact-info">
-      <div class="contact">
-        <svg class="contact__icon">
-          <use xlink:href="icons/sprite.svg#map-marker"></use>
-        </svg>
-        <p>Stirnu iela 4, Rīga</p>
-      </div>
-      <div class="contact">
-        <svg class="contact__icon">
-          <use xlink:href="icons/sprite.svg#phone"></use>
-        </svg>
-        <a href="tel:+37128800849">+37128800849</a>
-      </div>
-      <div class="contact">
-        <svg class="contact__icon">
-          <use xlink:href="icons/sprite.svg#clock"></use>
-        </svg>
-        <p>P - Pk: 9:00 - 17:00</p>
-      </div>
-    </div>
-    <div class="lang">
-      <a href="index.html" class="lang-active">LV</a>
-      <a href="ru.html">RU</a>
-    </div>
-    <div class="menu-btn" role="button" tabindex="0">
-      <div class="btn-line"></div>
-      <div class="btn-line">
-      </div>
-      <div class="btn-line">
-      </div>
-    </div>
-  </nav>
-  <div class="nav-menu">
-    <ul>
-      <li><a href="#home" class="active">Sākums</a></li>
-      <li><a href="#services">Masāžas Veidi</a></li>
-      <li><a href="#prices">Cenrādis</a></li>
-      <li><a href="#about">Par Mani</a></li>
-      <li><a href="#testimonials">Atsauksmes</a></li>
-      <li><a href="#contacts">Kontakti</a></li>
-    </ul>
-  </div>
-  <!-- Home -->
-  <section id="home" class="home">
-    <div class="home-text">
-      <h1>Jūsu ķermeņa veselība ir drošās rokās</h1>
-      <a href="#about" class="btn home-button">Lāsit Vairāk</a>
-    </div>
-  </section>
-  <!-- Services -->
+  <!-- Header -->
+  @include('partials/header.html')
+  <!-- Navigation menu -->
+  @include('partials/nav.html')
+  <!-- Home section -->
+  @include('partials/home.html')
+  <!-- Services start -->
   <section id="services" class="services">
     <div class="container">
       <h2 class="heading">Pakalpojumi</h2>
@@ -234,7 +164,8 @@
         </svg></button>
     </div>
   </section>
-  <!-- Prices -->
+  <!-- Services end -->
+  <!-- Prices start -->
   <section id="prices" class="prices">
     <div class="prices-card">
       <h2 class="heading">Izcenojums</h2>
@@ -265,7 +196,8 @@
       </div>
     </div>
   </section>
-  <!-- About -->
+  <!-- Prices end -->
+  <!-- About start -->
   <section id="about" class="about">
     <div class="about-text">
       <h2 class="heading">Par Mani</h2>
@@ -292,7 +224,8 @@
       </p>
     </div>
   </section>
-  <!-- Testimonials -->
+  <!-- About end -->
+  <!-- Testimonials start -->
   <section id="testimonials" class="testimonials">
     <h2 class="heading">Atsauksmes</h2>
     <div class="underline"></div>
@@ -313,7 +246,8 @@
       </div>
     </article>
   </section>
-  <!-- Contact -->
+  <!-- Testimonials end -->
+  <!-- Contact start -->
   <section id="contacts" class="contacts">
     <div class="contacts-info">
       <h2 class="heading">Sazinies</h2>
@@ -347,19 +281,15 @@
         aria-hidden="false" tabindex="0"></iframe>
     </div>
   </section>
+  <!-- Contact end -->
   <!-- Footer -->
-  <footer>
-    <div class="footer-text">
-      <p>
-        Copyright &copy; 2023. Designed by
-        <a href="https://www.ivcenko.name" target="_blank">Sergejs Ivcenko</a>. All Rights Reserved
-      </p>
-    </div>
-  </footer>
-  <button id="topBtn" class="top-btn" aria-label="Scroll to top"><svg class="feature__icon">
-      <use xlink:href="icons/sprite.svg#arrow-up"></use>
-    </svg></button>
+  @include('partials/footer.html')
 
+  <!-- Scroll to top button start -->
+  <button id="topBtn" class="top-btn" aria-label="Scroll to top"><svg class="feature__icon">
+      <use xlink:href="img/sprite.svg#arrow-up"></use>
+    </svg></button>
+  <!-- Scroll to top button end -->
 </body>
 
 </html>

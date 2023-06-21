@@ -1,10 +1,11 @@
+import { closeMenu, navMenu } from './mobileMenu.js';
+
 const fixedMenu = document.querySelector('.menu');
 const homeButton = document.querySelector('.home-button');
-const logo = document.querySelector('.logo');
+const logo = document.querySelector('.menu__logo');
 const pricesBtn = document.querySelectorAll('.article-btn');
-const navMenu = document.querySelector('.nav-menu');
 const navLinks = navMenu.querySelectorAll('a');
-const menuBtn = document.querySelector('.menu-btn');
+const topBtn = document.getElementById('topBtn');
 
 // Scroll to element
 const scrollToElement = (event, element, offset = 0) => {
@@ -28,6 +29,8 @@ const scrollToTop = (e) => {
 		behavior: 'smooth',
 	});
 };
+
+topBtn.addEventListener('click', scrollToTop);
 
 // Make nav menu transparent when scroll down
 window.addEventListener('scroll', () => {
@@ -57,11 +60,9 @@ navLinks.forEach((link) =>
 		navLinks.forEach((link) => {
 			link.classList.remove('active');
 		});
-		console.log(link);
-
+		closeMenu();
 		scrollToElement(e, link, 20);
-		navMenu.classList.remove('active-menu');
-		menuBtn.classList.remove('close');
+
 		link.classList.add('active');
 	}),
 );
