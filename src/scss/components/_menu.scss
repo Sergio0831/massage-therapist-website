@@ -124,6 +124,8 @@
 	}
 
 	@include mediaSm {
+		height: 4rem;
+
 		&__logo {
 			&-text {
 				display: none;

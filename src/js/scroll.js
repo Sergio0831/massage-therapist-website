@@ -1,11 +1,10 @@
 import { closeMenu, navMenu } from './mobileMenu.js';
 
+const pricesBtn = document.querySelectorAll('.article__btn');
 const fixedMenu = document.querySelector('.menu');
-const homeButton = document.querySelector('.home-button');
+const homeButton = document.querySelector('.home__button');
 const logo = document.querySelector('.menu__logo');
-const pricesBtn = document.querySelectorAll('.article-btn');
 const navLinks = navMenu.querySelectorAll('a');
-const topBtn = document.getElementById('topBtn');
 
 // Scroll to element
 const scrollToElement = (event, element, offset = 0) => {
@@ -22,15 +21,13 @@ const scrollToElement = (event, element, offset = 0) => {
 };
 
 // Scroll to top
-const scrollToTop = (e) => {
+export const scrollToTop = (e) => {
 	e.preventDefault();
 	window.scrollTo({
 		top: 0,
 		behavior: 'smooth',
 	});
 };
-
-topBtn.addEventListener('click', scrollToTop);
 
 // Make nav menu transparent when scroll down
 window.addEventListener('scroll', () => {
@@ -45,14 +42,14 @@ window.addEventListener('scroll', () => {
 homeButton.addEventListener('click', (e) => scrollToElement(e, homeButton, 60));
 
 // Scroll from services to prices
-pricesBtn.forEach((btn) =>
-	btn.addEventListener('click', (e) => scrollToElement(e, btn, 20)),
-);
+pricesBtn.forEach((btn) => {
+	btn.addEventListener('click', (e) => {
+		scrollToElement(e, btn, 20);
+	});
+});
 
 // Scroll to top click to logo
 logo.addEventListener('click', scrollToTop);
-
-// Scroll top button
 
 // Scroll to section on click menu link
 navLinks.forEach((link) =>

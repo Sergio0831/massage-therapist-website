@@ -1,0 +1,33 @@
+<section id="contacts" class="contacts">
+    <div class="contacts-info">
+        <h2 class="heading">Sazinies</h2>
+        <div class="underline"></div>
+        <div class="form-message">
+        </div>
+        <form action="ajax/mail.php" id="form" method="POST">
+            <label class="form-group" for="name">
+                <input id="name" type="text" class="form-control" name="name" required />
+                <span>Vārds</span>
+            </label>
+            <label class="form-group" for="email">
+                <input id="email" type="email" class="form-control" name="email" required />
+                <span>E-Pasts</span>
+            </label>
+            <label class="form-group" for="phone">
+                <input id="phone" type="tel" class="form-control" name="phone" required /> <span>Telefons</span>
+            </label>
+            <label class="form-group" for="message">
+                <textarea id="message" name="message" class="form-control" rows="10" required></textarea>
+                <span>Ziņa</span>
+            </label>
+            <button id="sendMail" name="button" type="submit" class="form-button">
+                Sūtīt
+            </button>
+        </form>
+    </div>
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.8526190741936!2d24.18346308725694!3d56.951326293530336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eece12d05acd0d%3A0xa1185720bb449620!2sStudio%20S!5e0!3m2!1sen!2sie!4v1594573228500!5m2!1sen!2sie"
+            aria-hidden="false" tabindex="0"></iframe>
+    </div>
+</section>

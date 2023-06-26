@@ -37,6 +37,10 @@
 	.active::after {
 		width: 100%;
 	}
+
+	@include mediaSm {
+		top: 4rem;
+	}
 }
 
 .active-menu {

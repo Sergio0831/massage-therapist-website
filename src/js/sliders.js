@@ -1,5 +1,5 @@
-import Swiper, { Navigation } from 'swiper';
-const el = document.querySelector('.services-slider');
+// import Swiper, { Navigation } from 'swiper';
+// const el = document.querySelector('.services-slider');
 
 // let init = false;
 // let swiper;
