@@ -1,20 +1,10 @@
 .about {
-	&-text {
+	&__content {
 		padding: 5rem 0;
 		background-color: $white-color;
-
-		p {
-			max-width: 70%;
-			text-align: left;
-			margin: 1rem auto;
-			@include adaptiv-font(18, 14);
-			font-family: $open-sans;
-			color: $text-color;
-			font-weight: $light-font-weight;
-		}
 	}
 
-	.img-container {
+	&__img-container {
 		position: relative;
 		height: 300px;
 		width: 300px;
@@ -31,32 +21,39 @@
 			right: -10px;
 			@include round-radius;
 		}
-
-		img {
-			display: block;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			position: relative;
-			@include round-radius;
-		}
 	}
 
-	@include mediaSm {
-		grid-template-columns: 1fr;
-		.about-img {
-			height: 42rem;
-		}
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: relative;
+		@include round-radius;
+	}
+
+	&__text {
+		max-width: 70%;
+		text-align: left;
+		margin: 1rem auto;
+		@include adaptiv-font(18, 16);
+		line-height: 1.8;
+		font-family: $open-sans;
+		color: $text-color;
+		font-weight: $light-font-weight;
 	}
 
 	@include mediaMd {
-		grid-template-columns: 1fr;
-		.about-img {
-			height: 42rem;
+		&__content {
+			padding: 2rem 0;
 		}
-	}
 
-	@include mediaLg {
-		grid-template-columns: repeat(2, 1fr);
+		&__text {
+			max-width: 90%;
+		}
+
+		&__img-container {
+			margin: 2rem auto;
+		}
 	}
 }

@@ -26,7 +26,8 @@
 }
 
 .article {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	padding: 2rem;
 	border: 1px solid $primary-color;
 	background-color: #fff;
@@ -44,14 +45,14 @@
 	}
 	&__text {
 		margin: 1rem 0;
-		@include adaptiv-font(18, 14);
+		@include adaptiv-font(18, 16);
 		line-height: 2rem;
 		font-weight: $light-font-weight;
 	}
 	&__btn {
-		@include adaptiv-font(15, 13);
+		@include adaptiv-font(16, 14);
 		margin-top: auto;
-		justify-self: $align-center;
+		align-self: $align-center;
 
 		&:hover {
 			background-color: $button-hover;
