@@ -318,28 +318,28 @@
 </section>
   <!-- Contact -->
   <section id="contacts" class="contacts">
-    <div class="contacts-info">
+    <div class="contacts__info">
         <h2 class="heading">Sazinies</h2>
         <div class="underline"></div>
-        <div class="form-message">
+        <div class="contacts__message">
         </div>
-        <form action="ajax/mail.php" id="form" method="POST">
-            <label class="form-group" for="name">
-                <input id="name" type="text" class="form-control" name="name" required />
+        <form action="ajax/mail.php" id="form" class="form" method="POST">
+            <label class="form__group" for="name">
+                <input id="name" type="text" class="form__control" name="name" required />
                 <span>Vārds</span>
             </label>
-            <label class="form-group" for="email">
-                <input id="email" type="email" class="form-control" name="email" required />
+            <label class="form__group" for="email">
+                <input id="email" type="email" class="form__control" name="email" required />
                 <span>E-Pasts</span>
             </label>
-            <label class="form-group" for="phone">
-                <input id="phone" type="tel" class="form-control" name="phone" required /> <span>Telefons</span>
+            <label class="form__group" for="phone">
+                <input id="phone" type="tel" class="form__control" name="phone" required /> <span>Telefons</span>
             </label>
-            <label class="form-group" for="message">
-                <textarea id="message" name="message" class="form-control" rows="10" required></textarea>
+            <label class="form__group" for="message">
+                <textarea id="message" name="message" class="form__control" rows="20" required></textarea>
                 <span>Ziņa</span>
             </label>
-            <button id="sendMail" name="button" type="submit" class="form-button">
+            <button id="sendMail" name="button" type="submit" class="form__button">
                 Sūtīt
             </button>
         </form>

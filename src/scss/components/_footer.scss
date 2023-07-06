@@ -1,5 +1,5 @@
 footer {
-	padding: 3rem 2%;
+	padding: clamp(1rem, 5%, 3rem) 2%;
 	background-color: $primary-color-lighten;
 
 	p {

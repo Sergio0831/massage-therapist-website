@@ -3,79 +3,10 @@
 	width: 100%;
 	min-height: 100%;
 
-	&-info {
+	&__info {
 		width: 50%;
-		padding: 5rem 10rem;
+		padding: 5rem clamp(3rem, 5%, 10rem);
 		background: #fff;
-
-		form {
-			margin-top: 3rem;
-			text-align: center;
-
-			.form-group {
-				position: relative;
-				text-align: left;
-				display: block;
-				margin-bottom: 5rem;
-
-				.form-control {
-					border: none;
-					border-bottom: 0.1rem solid $primary-color;
-					display: block;
-					width: 100%;
-					height: 5rem;
-					font-size: 1.5rem;
-					background: none;
-					font-family: $open-sans;
-					transition: all 0.15s ease;
-					&:focus,
-					&:valid {
-						border-bottom: 0.2rem solid $primary-color;
-						& + span {
-							transform: translateY(-2.2rem) scale(0.8);
-						}
-					}
-
-					&:focus-visible {
-						outline: none;
-					}
-				}
-
-				span {
-					@include adaptiv-font(20, 18);
-					color: $primary-color;
-					font-family: $open-sans;
-					position: absolute;
-					top: 1rem;
-					transform-origin: 0 0;
-					cursor: text;
-					@include easeOut;
-				}
-				textarea.form-control {
-					padding-top: 1.5rem;
-					padding-bottom: 1rem;
-					outline: none;
-				}
-			}
-
-			button {
-				width: 100%;
-				border: none;
-				cursor: pointer;
-				text-decoration: none;
-				@include adaptiv-font(20, 18);
-				font-family: $open-sans;
-				color: #fff;
-				background-color: $primary-color;
-				padding: 1rem 2rem;
-				@include border-radius;
-				@include easeOut;
-
-				&:hover {
-					background-color: $button-hover;
-				}
-			}
-		}
 	}
 
 	.alert-success {
@@ -87,12 +18,14 @@
 		padding-bottom: 0.5rem;
 		border-radius: 5px;
 		display: none;
+
 		h3 {
 			color: #fff;
 			@include adaptiv-font(18, 14);
 			font-family: $montserrat;
 			font-weight: $light-font-weight;
 		}
+
 		p {
 			margin: 0;
 			color: #fff;
@@ -112,18 +45,14 @@
 		border: none;
 	}
 
-	@include mediaSm {
-		display: grid;
-		grid-template-columns: 1fr;
-
-		.contacts-info {
+	@include mediaLg {
+		&__info {
 			width: 100%;
-			padding: 5rem 5rem;
-			form {
-				.form-group {
-					margin-bottom: 3rem;
-				}
-			}
+			padding: 2rem;
+		}
+
+		.form__group {
+			margin-bottom: 3rem;
 		}
 
 		.map {
@@ -133,38 +62,96 @@
 	}
 
 	@include mediaMd {
-		display: grid;
-		grid-template-columns: 1fr;
-		.contacts-info {
-			width: 100%;
-			padding: 5rem 5rem;
-			form {
-				.form-group {
-					margin-bottom: 3rem;
-				}
-			}
+		display: block;
+
+		.form__group {
+			margin-bottom: 3rem;
 		}
+
 		.map {
 			width: 100%;
 			height: 40rem;
 		}
 	}
 
-	@include mediaLg {
-		display: grid;
-		grid-template-columns: 1fr;
-		.contacts-info {
-			width: 100%;
-			padding: 5rem 5rem;
-			form {
-				.form-group {
-					margin-bottom: 3rem;
-				}
+	@include mediaSm {
+		.form__group {
+			margin-bottom: 2rem;
+		}
+
+		.map {
+			height: 40rem;
+		}
+	}
+}
+
+.form {
+	margin-top: 3rem;
+	text-align: center;
+
+	&__group {
+		position: relative;
+		text-align: left;
+		display: block;
+		margin-bottom: 2rem;
+
+		span {
+			@include adaptiv-font(20, 18);
+			color: $primary-color;
+			font-family: $open-sans;
+			position: absolute;
+			top: 1rem;
+			transform-origin: 0 0;
+			cursor: text;
+			@include easeOut;
+		}
+
+		textarea.form__control {
+			padding: 1.5rem 0 1rem;
+			outline: none;
+			height: 10rem;
+			margin-bottom: 4rem;
+		}
+	}
+
+	&__control {
+		border: none;
+		border-bottom: 0.1rem solid $primary-color;
+		display: block;
+		width: 100%;
+		height: 4rem;
+		font-size: 1.2rem;
+		background: none;
+		font-family: $open-sans;
+		transition: all 0.15s ease;
+		&:focus,
+		&:valid {
+			border-bottom: 0.2rem solid $primary-color;
+			& + span {
+				transform: translateY(-2rem) scale(0.8);
 			}
 		}
-		.map {
-			width: 100%;
-			height: 40rem;
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	&__button {
+		width: 100%;
+		border: none;
+		cursor: pointer;
+		text-decoration: none;
+		@include adaptiv-font(20, 18);
+		font-family: $open-sans;
+		color: #fff;
+		background-color: $primary-color;
+		padding: 1rem 2rem;
+		@include border-radius;
+		@include easeOut;
+
+		&:hover {
+			background-color: $button-hover;
 		}
 	}
 }
